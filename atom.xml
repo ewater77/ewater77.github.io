@@ -6,7 +6,7 @@
   <link href="https://blog.walter.com.tw/atom.xml" rel="self"/>
   
   <link href="https://blog.walter.com.tw/"/>
-  <updated>2024-04-30T18:49:46.961Z</updated>
+  <updated>2024-04-30T18:51:58.456Z</updated>
   <id>https://blog.walter.com.tw/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>noob-to-OSCP</title>
+    <title>從菜雞到 OSCP</title>
     <link href="https://blog.walter.com.tw/2024/04/30/noob-to-OSCP/"/>
     <id>https://blog.walter.com.tw/2024/04/30/noob-to-OSCP/</id>
     <published>2024-04-30T14:35:29.000Z</published>
-    <updated>2024-04-30T18:49:46.961Z</updated>
+    <updated>2024-04-30T18:51:58.456Z</updated>
     
     
       
@@ -35,6 +35,8 @@
     
     
     
+    
+    <category term="security,資訊安全" scheme="https://blog.walter.com.tw/tags/security-%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
     
   </entry>
   
