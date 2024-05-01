@@ -6,7 +6,7 @@
   <link href="https://blog.walter.com.tw/atom.xml" rel="self"/>
   
   <link href="https://blog.walter.com.tw/"/>
-  <updated>2024-05-01T14:59:37.531Z</updated>
+  <updated>2024-05-01T15:05:13.304Z</updated>
   <id>https://blog.walter.com.tw/</id>
   
   <author>
@@ -17,18 +17,19 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>能力越強責任越大 — CSI Cyber S01E01</title>
-    <link href="https://blog.walter.com.tw/2024/05/01/CyberSec-in-movie-CSI-Cyber-S01E01/"/>
-    <id>https://blog.walter.com.tw/2024/05/01/CyberSec-in-movie-CSI-Cyber-S01E01/</id>
-    <published>2024-05-01T14:33:56.000Z</published>
-    <updated>2024-05-01T14:59:37.531Z</updated>
+    <title>CyberSec-in-movie-CSI-Cyber-S01E02</title>
+    <link href="https://blog.walter.com.tw/2024/05/01/CyberSec-in-movie-CSI-Cyber-S01E02/"/>
+    <id>https://blog.walter.com.tw/2024/05/01/CyberSec-in-movie-CSI-Cyber-S01E02/</id>
+    <published>2024-05-01T15:03:18.000Z</published>
+    <updated>2024-05-01T15:05:13.304Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;哈囉大家好～</summary>
+    <summary type="html">&lt;p&gt;[撰文 Walter&amp;#x2F;Eric]&lt;/p&gt;
+&lt;p&gt;於第二集開始，影集內都會介紹一個資訊安全相關的名詞，而此次的專有名詞是黑帽駭客 (Black hat</summary>
         
       
     
@@ -45,6 +46,43 @@
     
     <category term="drama" scheme="https://blog.walter.com.tw/tags/drama/"/>
     
+    <category term="CSI Cyber" scheme="https://blog.walter.com.tw/tags/CSI-Cyber/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>能力越強責任越大 — CSI Cyber S01E01</title>
+    <link href="https://blog.walter.com.tw/2024/05/01/CyberSec-in-movie-CSI-Cyber-S01E01/"/>
+    <id>https://blog.walter.com.tw/2024/05/01/CyberSec-in-movie-CSI-Cyber-S01E01/</id>
+    <published>2024-05-01T14:33:56.000Z</published>
+    <updated>2024-05-01T15:14:47.639Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;[撰文 Walter&amp;#x2F; Eric]&lt;/p&gt;
+&lt;p&gt;哈囉大家好～ 我是瓦特，一忙就富奸了好久，拖到自己都不好意思了XD&lt;/p&gt;
+&lt;p&gt;希望對影集或電影有興趣的朋友歡迎到&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="secuirty" scheme="https://blog.walter.com.tw/tags/secuirty/"/>
+    
+    <category term="資訊安全" scheme="https://blog.walter.com.tw/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="看電影學資安" scheme="https://blog.walter.com.tw/tags/%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89/"/>
+    
+    <category term="movie" scheme="https://blog.walter.com.tw/tags/movie/"/>
+    
+    <category term="drama" scheme="https://blog.walter.com.tw/tags/drama/"/>
+    
+    <category term="CSI Cyber" scheme="https://blog.walter.com.tw/tags/CSI-Cyber/"/>
+    
   </entry>
   
   <entry>
@@ -52,7 +90,7 @@
     <link href="https://blog.walter.com.tw/2024/05/01/CyberSec-in-movie-Macgyver-S01E02/"/>
     <id>https://blog.walter.com.tw/2024/05/01/CyberSec-in-movie-Macgyver-S01E02/</id>
     <published>2024-05-01T13:49:30.000Z</published>
-    <updated>2024-05-01T14:15:02.168Z</updated>
+    <updated>2024-05-01T15:09:59.736Z</updated>
     
     
       
@@ -66,7 +104,17 @@
     
     
     
-    <category term="secuirty,資訊安全,看電影學資安,movie,drama" scheme="https://blog.walter.com.tw/tags/secuirty-%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8-%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89-movie-drama/"/>
+    <category term="secuirty" scheme="https://blog.walter.com.tw/tags/secuirty/"/>
+    
+    <category term="資訊安全" scheme="https://blog.walter.com.tw/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="看電影學資安" scheme="https://blog.walter.com.tw/tags/%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89/"/>
+    
+    <category term="movie" scheme="https://blog.walter.com.tw/tags/movie/"/>
+    
+    <category term="drama" scheme="https://blog.walter.com.tw/tags/drama/"/>
+    
+    <category term="Macgyver" scheme="https://blog.walter.com.tw/tags/Macgyver/"/>
     
   </entry>
   
@@ -107,7 +155,7 @@
     <link href="https://blog.walter.com.tw/2024/04/30/noob-to-OSCP/"/>
     <id>https://blog.walter.com.tw/2024/04/30/noob-to-OSCP/</id>
     <published>2024-04-30T14:35:29.000Z</published>
-    <updated>2024-04-30T18:53:44.165Z</updated>
+    <updated>2024-05-01T15:05:55.933Z</updated>
     
     
       
@@ -122,7 +170,15 @@
     
     
     
-    <category term="security,資訊安全" scheme="https://blog.walter.com.tw/tags/security-%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
+    <category term="資訊安全" scheme="https://blog.walter.com.tw/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="security" scheme="https://blog.walter.com.tw/tags/security/"/>
+    
+    <category term="OSCP" scheme="https://blog.walter.com.tw/tags/OSCP/"/>
+    
+    <category term="證照" scheme="https://blog.walter.com.tw/tags/%E8%AD%89%E7%85%A7/"/>
+    
+    <category term="Offsec" scheme="https://blog.walter.com.tw/tags/Offsec/"/>
     
   </entry>
   
