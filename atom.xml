@@ -187,14 +187,14 @@
     <link href="https://blog.walter.com.tw/2024/04/29/first/"/>
     <id>https://blog.walter.com.tw/2024/04/29/first/</id>
     <published>2024-04-28T16:00:00.000Z</published>
-    <updated>2024-05-01T14:57:16.290Z</updated>
+    <updated>2024-05-01T15:18:41.408Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;Medium 雖然畫面看起來滿舒服，但是經常需要登入或者付費才能看很不舒服，所以嘗試一下自建 Hexo 放在 github，之後會慢慢的把之前的舊文章都搬移過來&lt;/p&gt;
+    <summary type="html">&lt;p&gt;Medium 雖然畫面看起來滿舒服，但是經常需要登入或者付費才能看很不舒服，所以嘗試一下自建 Hexo 放在 github，寫 markdown 格式還是比較方便，之後會慢慢的把之前的舊文章都搬移過來&lt;/p&gt;
 &lt;p&gt;安裝參考：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;安裝教學 &lt;a</summary>
@@ -204,7 +204,9 @@
     
     
     
-    <category term="閒聊 , 心情" scheme="https://blog.walter.com.tw/tags/%E9%96%92%E8%81%8A-%E5%BF%83%E6%83%85/"/>
+    <category term="閒聊" scheme="https://blog.walter.com.tw/tags/%E9%96%92%E8%81%8A/"/>
+    
+    <category term="心情" scheme="https://blog.walter.com.tw/tags/%E5%BF%83%E6%83%85/"/>
     
   </entry>
   
