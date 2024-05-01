@@ -6,7 +6,7 @@
   <link href="https://blog.walter.com.tw/atom.xml" rel="self"/>
   
   <link href="https://blog.walter.com.tw/"/>
-  <updated>2024-05-01T16:11:49.127Z</updated>
+  <updated>2024-05-01T16:29:00.787Z</updated>
   <id>https://blog.walter.com.tw/</id>
   
   <author>
@@ -17,11 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>開車順路經過就入侵你家 — CSI Cyber S02E01</title>
+    <link href="https://blog.walter.com.tw/2024/05/02/CyberSec-in-movie-CSI-Cyber-S02E01/"/>
+    <id>https://blog.walter.com.tw/2024/05/02/CyberSec-in-movie-CSI-Cyber-S02E01/</id>
+    <published>2024-05-01T16:14:49.000Z</published>
+    <updated>2024-05-01T16:29:00.787Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Hi 各位朋友有安全躲過這次WannaCry勒索病毒嗎，記得趕緊把該補的Patch補一補吧，以免被打的嫑嫑的～下一波&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="secuirty" scheme="https://blog.walter.com.tw/tags/secuirty/"/>
+    
+    <category term="資訊安全" scheme="https://blog.walter.com.tw/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="看電影學資安" scheme="https://blog.walter.com.tw/tags/%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89/"/>
+    
+    <category term="drama" scheme="https://blog.walter.com.tw/tags/drama/"/>
+    
+    <category term="CSI Cyber" scheme="https://blog.walter.com.tw/tags/CSI-Cyber/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CyberSec-in-movie-CSI-Cyber-S01E02</title>
     <link href="https://blog.walter.com.tw/2024/05/01/CyberSec-in-movie-CSI-Cyber-S01E02/"/>
     <id>https://blog.walter.com.tw/2024/05/01/CyberSec-in-movie-CSI-Cyber-S01E02/</id>
     <published>2024-05-01T15:03:18.000Z</published>
-    <updated>2024-05-01T16:11:49.127Z</updated>
+    <updated>2024-05-01T16:17:38.150Z</updated>
     
     
       
@@ -42,8 +73,6 @@
     
     <category term="看電影學資安" scheme="https://blog.walter.com.tw/tags/%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89/"/>
     
-    <category term="movie" scheme="https://blog.walter.com.tw/tags/movie/"/>
-    
     <category term="drama" scheme="https://blog.walter.com.tw/tags/drama/"/>
     
     <category term="CSI Cyber" scheme="https://blog.walter.com.tw/tags/CSI-Cyber/"/>
@@ -55,7 +84,7 @@
     <link href="https://blog.walter.com.tw/2024/05/01/CyberSec-in-movie-CSI-Cyber-S01E01/"/>
     <id>https://blog.walter.com.tw/2024/05/01/CyberSec-in-movie-CSI-Cyber-S01E01/</id>
     <published>2024-05-01T14:33:56.000Z</published>
-    <updated>2024-05-01T16:13:05.427Z</updated>
+    <updated>2024-05-01T16:17:42.350Z</updated>
     
     
       
@@ -76,8 +105,6 @@
     <category term="資訊安全" scheme="https://blog.walter.com.tw/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
     
     <category term="看電影學資安" scheme="https://blog.walter.com.tw/tags/%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89/"/>
-    
-    <category term="movie" scheme="https://blog.walter.com.tw/tags/movie/"/>
     
     <category term="drama" scheme="https://blog.walter.com.tw/tags/drama/"/>
     
@@ -110,11 +137,11 @@
     
     <category term="看電影學資安" scheme="https://blog.walter.com.tw/tags/%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89/"/>
     
-    <category term="movie" scheme="https://blog.walter.com.tw/tags/movie/"/>
-    
     <category term="drama" scheme="https://blog.walter.com.tw/tags/drama/"/>
     
     <category term="Macgyver" scheme="https://blog.walter.com.tw/tags/Macgyver/"/>
+    
+    <category term="movie" scheme="https://blog.walter.com.tw/tags/movie/"/>
     
   </entry>
   
@@ -123,7 +150,7 @@
     <link href="https://blog.walter.com.tw/2024/05/01/CyberSec-in-movie-Macgyver-S01E01/"/>
     <id>https://blog.walter.com.tw/2024/05/01/CyberSec-in-movie-Macgyver-S01E01/</id>
     <published>2024-04-30T19:12:53.000Z</published>
-    <updated>2024-05-01T15:24:38.832Z</updated>
+    <updated>2024-05-01T16:17:32.209Z</updated>
     
     
       
@@ -143,8 +170,6 @@
     <category term="資訊安全" scheme="https://blog.walter.com.tw/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
     
     <category term="看電影學資安" scheme="https://blog.walter.com.tw/tags/%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89/"/>
-    
-    <category term="movie" scheme="https://blog.walter.com.tw/tags/movie/"/>
     
     <category term="drama" scheme="https://blog.walter.com.tw/tags/drama/"/>
     
