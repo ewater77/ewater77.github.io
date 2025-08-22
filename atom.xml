@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Walter</title>
+  <icon>https://blog.walter.com.tw/icon.png</icon>
+  
+  <link href="https://blog.walter.com.tw/atom.xml" rel="self"/>
+  
+  <link href="https://blog.walter.com.tw/"/>
+  <updated>2025-08-22T19:51:07.761Z</updated>
+  <id>https://blog.walter.com.tw/</id>
+  
+  <author>
+    <name>Walter</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>防詐騙手冊：詐騙集團比演藝圈還會演，奧斯卡欠他們一座小金人</title>
+    <link href="https://blog.walter.com.tw/2024/09/07/Anti-Social-Engineer/"/>
+    <id>https://blog.walter.com.tw/2024/09/07/Anti-Social-Engineer/</id>
+    <published>2024-09-06T16:00:00.000Z</published>
+    <updated>2025-08-22T19:51:07.761Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;當詐騙集團比-Netflix-還會拍劇&quot;&gt;&lt;a href=&quot;#當詐騙集團比-Netflix-還會拍劇&quot; class=&quot;headerlink&quot; title=&quot;當詐騙集團比 Netflix 還會拍劇&quot;&gt;&lt;/a&gt;當詐騙集團比 Netflix</summary>
+        
+      
+    
+    
+    
+    
+    <category term="資訊安全" scheme="https://blog.walter.com.tw/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="security" scheme="https://blog.walter.com.tw/tags/security/"/>
+    
+    <category term="Social Engineer" scheme="https://blog.walter.com.tw/tags/Social-Engineer/"/>
+    
+    <category term="防詐騙" scheme="https://blog.walter.com.tw/tags/%E9%98%B2%E8%A9%90%E9%A8%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>這才不算是入侵，因為你所有的密碼都一樣 - 宅男行不行 The Big Bang Theory S02E09, S09E09</title>
+    <link href="https://blog.walter.com.tw/2024/05/02/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/"/>
+    <id>https://blog.walter.com.tw/2024/05/02/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/</id>
+    <published>2024-05-01T17:26:21.000Z</published>
+    <updated>2024-05-05T17:40:25.847Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;嗨，大家好，我是&lt;a href=&quot;https://www.isda.org.tw/&quot;&gt;ISDA&lt;/a&gt;的Walter，看電影(劇)學資安又來了，這次我們來看看幽默好笑又可以學習科學詞彙的The Big Bang</summary>
+        
+      
+    
+    
+    
+    
+    <category term="資訊安全" scheme="https://blog.walter.com.tw/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="secuirty" scheme="https://blog.walter.com.tw/tags/secuirty/"/>
+    
+    <category term="看電影學資安" scheme="https://blog.walter.com.tw/tags/%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89/"/>
+    
+    <category term="drama" scheme="https://blog.walter.com.tw/tags/drama/"/>
+    
+    <category term="The Big Bang Theory" scheme="https://blog.walter.com.tw/tags/The-Big-Bang-Theory/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>你是不是要玩死我呀 - 疑犯追蹤 Person of Interest S04E11 (IF-THEN-ELSE)</title>
+    <link href="https://blog.walter.com.tw/2024/05/02/CyberSec-in-movie-Person-of-Interest-S04E11-IF-THEN-ELSE/"/>
+    <id>https://blog.walter.com.tw/2024/05/02/CyberSec-in-movie-Person-of-Interest-S04E11-IF-THEN-ELSE/</id>
+    <published>2024-05-01T16:56:04.000Z</published>
+    <updated>2024-05-06T12:57:38.245Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    
+    <category term="資訊安全" scheme="https://blog.walter.com.tw/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="secuirty" scheme="https://blog.walter.com.tw/tags/secuirty/"/>
+    
+    <category term="看電影學資安" scheme="https://blog.walter.com.tw/tags/%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89/"/>
+    
+    <category term="drama" scheme="https://blog.walter.com.tw/tags/drama/"/>
+    
+    <category term="Person of Interest" scheme="https://blog.walter.com.tw/tags/Person-of-Interest/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>開車順路經過就入侵你家 - CSI Cyber S02E01</title>
+    <link href="https://blog.walter.com.tw/2024/05/02/CyberSec-in-movie-CSI-Cyber-S02E01/"/>
+    <id>https://blog.walter.com.tw/2024/05/02/CyberSec-in-movie-CSI-Cyber-S02E01/</id>
+    <published>2024-05-01T16:14:49.000Z</published>
+    <updated>2024-05-05T17:38:11.647Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Hi 各位朋友有安全躲過這次WannaCry勒索病毒嗎，記得趕緊把該補的Patch補一補吧，以免被打的嫑嫑的～下一波&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="資訊安全" scheme="https://blog.walter.com.tw/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="secuirty" scheme="https://blog.walter.com.tw/tags/secuirty/"/>
+    
+    <category term="看電影學資安" scheme="https://blog.walter.com.tw/tags/%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89/"/>
+    
+    <category term="drama" scheme="https://blog.walter.com.tw/tags/drama/"/>
+    
+    <category term="CSI Cyber" scheme="https://blog.walter.com.tw/tags/CSI-Cyber/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IoT世代，萬物皆可駭 - CSI Cyber S01E02</title>
+    <link href="https://blog.walter.com.tw/2024/05/01/CyberSec-in-movie-CSI-Cyber-S01E02/"/>
+    <id>https://blog.walter.com.tw/2024/05/01/CyberSec-in-movie-CSI-Cyber-S01E02/</id>
+    <published>2024-05-01T15:03:18.000Z</published>
+    <updated>2024-05-05T17:44:03.004Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;[撰文 Walter&amp;#x2F;Eric]&lt;/p&gt;
+&lt;p&gt;於第二集開始，影集內都會介紹一個資訊安全相關的名詞，而此次的專有名詞是&lt;a href=&quot;https://blog.trendmicro.com.tw/?p=1857&quot;&gt;黑帽駭客 (Black hat</summary>
+        
+      
+    
+    
+    
+    
+    <category term="資訊安全" scheme="https://blog.walter.com.tw/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="secuirty" scheme="https://blog.walter.com.tw/tags/secuirty/"/>
+    
+    <category term="看電影學資安" scheme="https://blog.walter.com.tw/tags/%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89/"/>
+    
+    <category term="drama" scheme="https://blog.walter.com.tw/tags/drama/"/>
+    
+    <category term="CSI Cyber" scheme="https://blog.walter.com.tw/tags/CSI-Cyber/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>能力越強責任越大 - CSI Cyber S01E01</title>
+    <link href="https://blog.walter.com.tw/2024/05/01/CyberSec-in-movie-CSI-Cyber-S01E01/"/>
+    <id>https://blog.walter.com.tw/2024/05/01/CyberSec-in-movie-CSI-Cyber-S01E01/</id>
+    <published>2024-05-01T14:33:56.000Z</published>
+    <updated>2024-05-05T17:44:05.221Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;[撰文 Walter&amp;#x2F; Eric]&lt;/p&gt;
+&lt;p&gt;哈囉大家好～ 我是瓦特，一忙就富奸了好久，拖到自己都不好意思了XD&lt;/p&gt;
+&lt;p&gt;希望對影集或電影有興趣的朋友歡迎到&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="資訊安全" scheme="https://blog.walter.com.tw/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="secuirty" scheme="https://blog.walter.com.tw/tags/secuirty/"/>
+    
+    <category term="看電影學資安" scheme="https://blog.walter.com.tw/tags/%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89/"/>
+    
+    <category term="drama" scheme="https://blog.walter.com.tw/tags/drama/"/>
+    
+    <category term="CSI Cyber" scheme="https://blog.walter.com.tw/tags/CSI-Cyber/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>你的WiFi就是我的WiFi - 新百戰天龍 MacGyver 第一季 第二集 S01E02</title>
+    <link href="https://blog.walter.com.tw/2024/05/01/CyberSec-in-movie-Macgyver-S01E02/"/>
+    <id>https://blog.walter.com.tw/2024/05/01/CyberSec-in-movie-Macgyver-S01E02/</id>
+    <published>2024-05-01T13:49:30.000Z</published>
+    <updated>2024-05-05T17:44:17.719Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;各位忠實粉絲久等了，第二篇看電影學資安來囉～ (哪來的粉絲?)，這次要討論的一樣是讓某些人覺得相見不如懷念的馬蓋先，不過我還是認為此片沒大家說得那麼差啦XD</summary>
+        
+      
+    
+    
+    
+    
+    <category term="資訊安全" scheme="https://blog.walter.com.tw/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="secuirty" scheme="https://blog.walter.com.tw/tags/secuirty/"/>
+    
+    <category term="看電影學資安" scheme="https://blog.walter.com.tw/tags/%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89/"/>
+    
+    <category term="drama" scheme="https://blog.walter.com.tw/tags/drama/"/>
+    
+    <category term="Macgyver" scheme="https://blog.walter.com.tw/tags/Macgyver/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>看電影學資安的第一篇 - 懷念的馬蓋先 新百戰天龍 MacGyver 第一季 第一集 S01E01</title>
+    <link href="https://blog.walter.com.tw/2024/05/01/CyberSec-in-movie-Macgyver-S01E01/"/>
+    <id>https://blog.walter.com.tw/2024/05/01/CyberSec-in-movie-Macgyver-S01E01/</id>
+    <published>2024-04-30T19:12:53.000Z</published>
+    <updated>2024-05-06T12:32:59.199Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;累了嗎，聽首歌好嗎？&lt;/p&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="資訊安全" scheme="https://blog.walter.com.tw/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="secuirty" scheme="https://blog.walter.com.tw/tags/secuirty/"/>
+    
+    <category term="看電影學資安" scheme="https://blog.walter.com.tw/tags/%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89/"/>
+    
+    <category term="drama" scheme="https://blog.walter.com.tw/tags/drama/"/>
+    
+    <category term="Macgyver" scheme="https://blog.walter.com.tw/tags/Macgyver/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>從菜雞到 OSCP</title>
+    <link href="https://blog.walter.com.tw/2024/04/30/noob-to-OSCP/"/>
+    <id>https://blog.walter.com.tw/2024/04/30/noob-to-OSCP/</id>
+    <published>2024-04-30T14:35:29.000Z</published>
+    <updated>2025-01-07T12:50:02.048Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;滿幸運的，一次就考到OSCP，在此感謝許多在考照過程幫助過我的人。&lt;/p&gt;
+&lt;h1 id=&quot;OSCP簡介&quot;&gt;&lt;a href=&quot;#OSCP簡介&quot; class=&quot;headerlink&quot; title=&quot;OSCP簡介&quot;&gt;&lt;/a&gt;OSCP簡介&lt;/h1&gt;&lt;p&gt;Offensive</summary>
+        
+      
+    
+    
+    
+    
+    <category term="資訊安全" scheme="https://blog.walter.com.tw/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="security" scheme="https://blog.walter.com.tw/tags/security/"/>
+    
+    <category term="OSCP" scheme="https://blog.walter.com.tw/tags/OSCP/"/>
+    
+    <category term="證照" scheme="https://blog.walter.com.tw/tags/%E8%AD%89%E7%85%A7/"/>
+    
+    <category term="Offsec" scheme="https://blog.walter.com.tw/tags/Offsec/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>自建 blogger 開張</title>
+    <link href="https://blog.walter.com.tw/2024/04/29/first/"/>
+    <id>https://blog.walter.com.tw/2024/04/29/first/</id>
+    <published>2024-04-28T16:00:00.000Z</published>
+    <updated>2024-05-01T15:22:08.657Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Medium 雖然畫面看起來滿舒服，但是經常需要登入或者付費才能看很不舒服，所以嘗試一下自建 Hexo 放在 github，寫 markdown 格式還是比較方便，之後會慢慢的把之前的舊文章都搬移過來&lt;/p&gt;
+&lt;p&gt;安裝參考：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;安裝教學 &lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="閒聊" scheme="https://blog.walter.com.tw/tags/%E9%96%92%E8%81%8A/"/>
+    
+    <category term="心情" scheme="https://blog.walter.com.tw/tags/%E5%BF%83%E6%83%85/"/>
+    
+  </entry>
+  
+</feed>
