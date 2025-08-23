@@ -6,7 +6,7 @@
   <link href="https://blog.walter.com.tw/atom.xml" rel="self"/>
   
   <link href="https://blog.walter.com.tw/"/>
-  <updated>2025-08-22T19:51:07.761Z</updated>
+  <updated>2025-08-23T10:34:57.441Z</updated>
   <id>https://blog.walter.com.tw/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我很驕傲我把密碼存成明文：當代網站的密碼管理現況</title>
+    <link href="https://blog.walter.com.tw/2025/08/23/Im-proud-that-I-store-my-password-in-plaintext/"/>
+    <id>https://blog.walter.com.tw/2025/08/23/Im-proud-that-I-store-my-password-in-plaintext/</id>
+    <published>2025-08-22T20:18:29.000Z</published>
+    <updated>2025-08-23T10:34:57.441Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/../images/Im-proud-that-I-store-my-password-in-plaintext/plainpass.png&quot; alt=&quot;我的密碼沒穿衣服&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;為什麼要重新開啟這個話題&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="資訊安全" scheme="https://blog.walter.com.tw/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="security" scheme="https://blog.walter.com.tw/tags/security/"/>
+    
+    <category term="密碼安全" scheme="https://blog.walter.com.tw/tags/%E5%AF%86%E7%A2%BC%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="加密" scheme="https://blog.walter.com.tw/tags/%E5%8A%A0%E5%AF%86/"/>
+    
+    <category term="明文密碼" scheme="https://blog.walter.com.tw/tags/%E6%98%8E%E6%96%87%E5%AF%86%E7%A2%BC/"/>
+    
+  </entry>
   
   <entry>
     <title>防詐騙手冊：詐騙集團比演藝圈還會演，奧斯卡欠他們一座小金人</title>
