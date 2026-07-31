@@ -124,6 +124,12 @@ feed:
   content_limit: 140
   content_limit_delim: ' '
   order_by: -date
-  icon: icon.png
+  icon: /img/favicon.png
   autodiscovery: true
   template:
+
+# hexo-generator-search(站內搜尋索引,供主題 local_search 使用)
+search:
+  path: search.xml
+  field: post
+  content: true

@@ -7,6 +7,8 @@ tags:
     - 看電影學資安
     - drama
     - The Big Bang Theory
+categories:
+    - 看電影學資安
 cover: /images/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/3.webp
 ---
 嗨，大家好，我是[ISDA](https://www.isda.org.tw/)的Walter，看電影(劇)學資安又來了，這次我們來看看幽默好笑又可以學習科學詞彙的The Big Bang Theory(宅男行不行)與最近的話題韓劇魷魚遊戲，看這些劇中有什麼關於資安的部分

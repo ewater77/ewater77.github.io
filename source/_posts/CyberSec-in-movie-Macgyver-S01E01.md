@@ -7,6 +7,8 @@ tags:
     - 看電影學資安
     - drama
     - Macgyver
+categories:
+    - 看電影學資安
 cover: /images/CyberSec-in-movie-Macgyver-S01E01/2.webp
 ---
 

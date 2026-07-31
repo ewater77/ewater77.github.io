@@ -5,6 +5,8 @@ author: "Walter"
 tags: ["資訊安全", "git", "原始碼外洩", "滲透測試", "弱點掃描"]
 description: "自架網站廠商必讀：避免原始碼及其他機敏資料外洩，簡易自我檢測網站是否把 .git 目錄與金流金鑰一起公開，並提供判讀、金鑰更換、通報綠界科技做法。"
 slug: git-directory-exposure-self-check
+categories:
+    - 資訊安全
 cover: /images/git-leak/2026-07-Cover-ChatGPT.png
 ---
 

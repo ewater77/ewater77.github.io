@@ -6,6 +6,8 @@ tags:
     - security
     - Social Engineer
     - 防詐騙
+categories:
+    - 資訊安全
 cover: /images/Anti-Social-Engineer/social_engineer.jpeg
 ---
 

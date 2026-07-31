@@ -4,6 +4,8 @@ date: 2024-04-29
 tags: 
     - 閒聊
     - 心情
+categories:
+    - 生活雜記
 cover: /images/avatar.jpg
 ---
 Medium 雖然畫面看起來滿舒服，但是經常需要登入或者付費才能看很不舒服，所以嘗試一下自建 Hexo 放在 github，寫 markdown 格式還是比較方便，之後會慢慢的把之前的舊文章都搬移過來

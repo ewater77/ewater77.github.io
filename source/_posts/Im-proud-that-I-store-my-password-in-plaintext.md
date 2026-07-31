@@ -7,6 +7,8 @@ tags:
     - 密碼安全
     - 加密
     - 明文密碼
+categories:
+    - 資訊安全
 cover: /images/Im-proud-that-I-store-my-password-in-plaintext/plainpass.png
 ---
 

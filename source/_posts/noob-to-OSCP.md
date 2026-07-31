@@ -7,6 +7,8 @@ tags:
     - OSCP
     - 證照
     - Offsec
+categories:
+    - 資訊安全
 cover: /images/noob-to-OSCP/offsec_price_20240430.png
 ---
 

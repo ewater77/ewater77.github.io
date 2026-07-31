@@ -7,6 +7,8 @@ tags:
     - 看電影學資安
     - drama
     - Person of Interest
+categories:
+    - 看電影學資安
 cover: /images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/3.webp
 ---
 ![](/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/1.webp)
