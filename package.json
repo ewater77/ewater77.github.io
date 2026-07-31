@@ -5,8 +5,8 @@
   "scripts": {
     "build": "hexo generate",
     "clean": "hexo clean",
-    "deploy": "hexo clean && hexo generate && npm run dropbox-ignore && hexo deploy",
-    "dropbox-ignore": "xattr -w com.dropbox.ignored 1 public db.json .deploy_git node_modules 2>/dev/null || true",
+    "deploy": "npm run dropbox-ignore && hexo clean && hexo generate && npm run dropbox-ignore && hexo deploy",
+    "dropbox-ignore": "node tools/dropbox-ignore.mjs",
     "server": "hexo server"
   },
   "hexo": {
