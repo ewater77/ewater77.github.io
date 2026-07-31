@@ -10,7 +10,7 @@ tags:
 cover: /images/Im-proud-that-I-store-my-password-in-plaintext/plainpass.png
 ---
 
-![我的密碼沒穿衣服](../images/Im-proud-that-I-store-my-password-in-plaintext/plainpass.png)
+![我的密碼沒穿衣服](/images/Im-proud-that-I-store-my-password-in-plaintext/plainpass.png)
 
 ## 為什麼要重新開啟這個話題
 

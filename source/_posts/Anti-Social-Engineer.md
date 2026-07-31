@@ -17,7 +17,7 @@ cover: /images/Anti-Social-Engineer/social_engineer.jpeg
 
 你媽轉傳的那些「緊急通知」貼圖，搞不好就是詐騙集團的情書。今天我們要用**5 分鐘**教你提升防詐技能，讓你不再當薯條！
 
-![詐騙集團真的欠炸](../images/Anti-Social-Engineer/欠炸.jpg)
+![詐騙集團真的欠炸](/images/Anti-Social-Engineer/欠炸.jpg)
 
 ---
 
@@ -25,7 +25,7 @@ cover: /images/Anti-Social-Engineer/social_engineer.jpeg
 
 看看內政部警政署的[打詐儀表板](https://165.npa.gov.tw/#/article/1/1564)，這數字比我的存款還驚人（廢話，我存款是負的）：
 
-![打詐儀表板數據](../images/Anti-Social-Engineer/打詐儀表板.png)
+![打詐儀表板數據](/images/Anti-Social-Engineer/打詐儀表板.png)
 
 **每天好幾億的財損**！這比台灣生育率下降的速度還快 📉
 
@@ -70,7 +70,7 @@ https://www.walter.com.tw/images/data-lock-encryption-security.jpg
 - **路徑**：`images`
 - **檔案名稱**：`data-lock-encryption-security.jpg`
 
-![網址結構示意圖](../images/Anti-Social-Engineer/url.png)
+![網址結構示意圖](/images/Anti-Social-Engineer/url.png)
 
 ### 🔍 域名深度解析：詐騙集團最愛的陷阱
 
@@ -142,7 +142,7 @@ www.walter.com.tw
 
 ### 小技巧：瀏覽器會隱藏 www
 
-![去除www的顯示](../images/Anti-Social-Engineer/urlwithouwww.png)
+![去除www的顯示](/images/Anti-Social-Engineer/urlwithouwww.png)
 
 有些瀏覽器會自動隱藏 `www` 前綴，這是正常的。
 

@@ -7,7 +7,7 @@ tags:
     - OSCP
     - 證照
     - Offsec
-cover: ../images/noob-to-OSCP/offsec_price_20240430.png
+cover: /images/noob-to-OSCP/offsec_price_20240430.png
 ---
 
 滿幸運的，一次就考到OSCP，在此感謝許多在考照過程幫助過我的人。
@@ -18,7 +18,7 @@ Offensive Security Certified Professional([OSCP](https://www.offensive-security.
 Offensive Security Certified Professional(OSCP)PEN-200 (也就是OSCP的課程)價格最低$1649，雖然也不便宜，但考取之後不需要每年的維護費用，整體來說還是比 EC-Council 還划算，一年份的Lab需要$2599(換算台幣約8萬多)，外加兩次的測驗機會，另外值得一提的是重考的費用是$249，至於該購買那個方案就看你(或你的公司)口袋有多深，以及你是否有把握在時間內練習Lab。
 2024/04/30 價目表
 
-![](../images/noob-to-OSCP/offsec_price_20240430.png)
+![](/images/noob-to-OSCP/offsec_price_20240430.png)
 
 [課程的內容](https://www.offensive-security.com/documentation/penetration-testing-with-kali.pdf)可以說從基礎到滲透測試基本所需的知識都涵蓋了，對此證照或課程有興趣的可以先參考一下是否適合自己，繳費成功後課程開始會寄送pdf、影片與vpn設定檔與帳號密碼給你，Lab時間同時也開始計算，教材必須於時間內下載完畢，否則之後無法再下載，教材都有浮水印，照規定是不可以分享教材給其他人，否則會取消你的證照，Lab環境則是與大家共用的測試環境，目標皆是取得低權限shell與最高權限(root/system)shell與對應的flag，在某些機器攻下之後還會開放額外的網段讓你進行測試，在這部分如果將pdf的練習題與lab除了alpha, beta以外且須包含AD的機器過程10台寫下過程，考試完畢可以附上+10分，斟酌自己的時間安排是否做練習與筆記。
 
@@ -33,7 +33,7 @@ OSCP實機考試的方式是在23小時45分鐘內對3+3台機器進行滲透測
 實機考試完畢後馬上接著24小時的報告撰寫時間，必須依照報告[要求的格式撰寫](https://www.offensive-security.com/pwk-online/PWKv1-REPORT.doc)，包含Summary以及每個步驟以及程式碼的修改部分等，如果你分數差5分可以另外補上PDF練習題與Lab練習筆記，會額外+5分，檔案名稱必須依照OSCP-學員編號-Exam-Report.pdf與.7z上傳，且檔案大小不得大於500MB與400MB，個人經驗是滿難超過大小的，上傳完畢會請你確認7z檔案的md5是否一樣，如果一樣就按下送出就等待10個工作天通知結果
 OSCP報告範本
 
-![](../images/noob-to-OSCP/OSCP_Report.png)
+![](/images/noob-to-OSCP/OSCP_Report.png)
 
 # 個人經驗與建議
 以下為個人經驗，但不見得適合每個人，如果你已經有很豐富的滲透測試經驗，建議直接報告90天lab+考試(目前最低)即可，可以忽略以下的建議，如果你跟我一樣是小菜雞，可以考慮依照以下的方式準備考試：

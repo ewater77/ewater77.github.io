@@ -5,10 +5,10 @@ author: "Walter"
 tags: ["資訊安全", "git", "原始碼外洩", "滲透測試", "弱點掃描"]
 description: "自架網站廠商必讀：避免原始碼及其他機敏資料外洩，簡易自我檢測網站是否把 .git 目錄與金流金鑰一起公開，並提供判讀、金鑰更換、通報綠界科技做法。"
 slug: git-directory-exposure-self-check
-cover: ../images/git-leak/2026-07-Cover-ChatGPT.png
+cover: /images/git-leak/2026-07-Cover-ChatGPT.png
 ---
 
-![.git 目錄外洩自我檢測與修補](../images/git-leak/2026-07-Cover-ChatGPT.png)
+![.git 目錄外洩自我檢測與修補](/images/git-leak/2026-07-Cover-ChatGPT.png)
 
 <font color="red">注意：僅限用於測試自己的網站，勿測試非屬於自己或非經過授權的網站或主機，以免觸犯刑法妨害電腦使用罪。</font>
 
@@ -29,7 +29,7 @@ cover: ../images/git-leak/2026-07-Cover-ChatGPT.png
 
 綠界科技資安團隊日常會查看漏洞通報平台 [HITCON ZeroDay](https://zeroday.hitcon.org/) 公布的漏洞，其中一種很嚴重的資安問題，要發現及改善很簡單，卻一直有網站在平台被通報，就是 .git 目錄外洩。
 
-![HITCON ZeroDay .git 外洩案例](../images/git-leak/03-HITCON-ZeroDay-Git.jpg)
+![HITCON ZeroDay .git 外洩案例](/images/git-leak/03-HITCON-ZeroDay-Git.jpg)
 可以從圖片看到台灣有三百多個網站都被通報此弱點，這還是目前已知的數量而已.... / 圖片來源：[HITCON ZeroDay](https://zeroday.hitcon.org/)
 
 .git 外洩最麻煩的地方在於它一次把原始碼和藏在原始碼裡的綠界介接金鑰（HashKey/HashIV）、特店編號、資料庫密碼全部送出去，攻擊者拿到後，可以直接取得所有金流、物流、電子發票等資訊。
@@ -55,7 +55,7 @@ Git 能做到這些，靠的是它在專案資料夾裡自動建立的隱藏資�
 
 很多人以為伺服器要開目錄列表(Directory Listing)攻擊者才有辦法拿到東西，但其實攻擊者根本不需要看到清單，攻擊者從 `/.git/HEAD` 開始，慢慢找就有機會把整個原始碼還原出來。
 
-![git外洩原理](../images/git-leak/01-git-leak-how-it-happens.png)
+![git外洩原理](/images/git-leak/01-git-leak-how-it-happens.png)
 
 只要 .git 可以被 HTTP 存取，開源的自動化工具幾分鐘就能把整份原始碼和歷史重建出來 / 圖片來源：自行整理
 
@@ -71,7 +71,7 @@ Git 能做到這些，靠的是它在專案資料夾裡自動建立的隱藏資�
 - 從你的原始碼找到更多漏洞
 - 取得你主機的最高權限。
 
-![DotGit](../images/git-leak/06-DotGit.png)
+![DotGit](/images/git-leak/06-DotGit.png)
 
 攻擊者使用工具後可以輕鬆點兩下就打包你的網站原始碼 / 圖片來源：[DotGit](https://github.com/davtur19/DotGit)
 
@@ -107,7 +107,7 @@ Git 能做到這些，靠的是它在專案資料夾裡自動建立的隱藏資�
 打開瀏覽器存取 https://你的網域/.git/HEAD
 ```
 
-![.git/HEAD](../images/git-leak/04-gitHEAD.png)
+![.git/HEAD](/images/git-leak/04-gitHEAD.png)
 
 外洩常見的內容：ref: refs/heads/main 或 master  / 圖片來源：自行整理
 
@@ -116,7 +116,7 @@ Git 能做到這些，靠的是它在專案資料夾裡自動建立的隱藏資�
 打開瀏覽器存取 https://你的網域/.git/config
 ```
 
-![.git/config](../images/git-leak/05-gitconfig.png)
+![.git/config](/images/git-leak/05-gitconfig.png)
 
 外洩時會看到 [core]、[remote "origin"]、[branch "master"]、url = ... 這類資訊 / 圖片來源：自行整理
 
@@ -199,7 +199,7 @@ A：不行。未經授權掃描可能違法，請改為通報對方。
 | [DotGit](https://github.com/davtur19/DotGit) | 開源瀏覽器擴充，正常瀏覽網站時，會自動幫你偵測該站是否暴露 .git，並在發現時通知你。<br>（注意：檢查別人網站是否 .git 洩漏可能有違法之虞） |
 | [GitHacker](https://github.com/WangYihang/GitHacker) | 能還原出歷史 Commit，便於做機敏資訊回溯。 |
 
-![GitHacker](../images/git-leak/07-GitHacker.gif)
+![GitHacker](/images/git-leak/07-GitHacker.gif)
 工具 GitHacker Demo / 圖片來源：[GitHacker](https://github.com/wangyihang/githacker)
 
 ---
