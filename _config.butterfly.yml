@@ -1136,7 +1136,8 @@ CDN:
     # snackbar:
     # snackbar_css:
     # translate:
-    # twikoo:
+    # 覆寫主題鎖定的 twikoo 前端版本,需與 Vercel 雲端函式版本一致;升級後端後記得同步改這裡
+    twikoo: https://cdn.jsdelivr.net/npm/twikoo@1.7.15/dist/twikoo.all.min.js
     # typed:
     # utils:
     # valine:
