@@ -2,7 +2,7 @@
 title: 你是不是要玩死我呀 - 疑犯追蹤 Person of Interest S04E11 (IF-THEN-ELSE)
 date: 2024-05-02 00:56:04
 tags: 
-    - secuirty
+    - security
     - 資訊安全
     - 看電影學資安
     - drama
@@ -10,9 +10,11 @@ tags:
 description: "看電影學資安：疑犯追蹤 S04E11 劇中出現的 Shellshock（CVE-2014-6271）攻擊指令，分析這段 PoC 的正確性與實際可利用性，順便吐槽戲劇裡的駭客畫面。"
 categories:
     - 看電影學資安
+series: 看電影學資安
+noticeOutdate: false
 cover: /images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/3.webp
 ---
-![](/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/1.webp)
+![疑犯追蹤劇照，主角 Finch 與 Reese 於城市街頭](/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/1.webp)
 
 疑犯追蹤劇照，圖片來源：primevideo.com
 
@@ -24,7 +26,7 @@ cover: /images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/3.webp
 
 =======防雷分隔線=======
 
-![](/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/2.webp)
+![提醒讀者後面有劇情雷的防雷插圖](/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/2.webp)
 
 要進入請小心的防雷圖。圖片來源：[MMMMM_禾野男孩](https://twitter.com/mnmmmm_hynh)
 
@@ -36,7 +38,7 @@ cover: /images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/3.webp
 env x='(){ :;}; echo vulnerable' bash-c
 ```
 
-![](/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/3.webp)
+![劇中 Reese 在終端機輸入 Shellshock PoC 指令的畫面](/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/3.webp)
 
 攻擊畫面與指令圖片來源：Person of Interest 劇中畫面
 
@@ -45,24 +47,24 @@ env x='(){ :;}; echo vulnerable' bash-c
 雖然畫面上還沒輸入完，但怎麼在被好幾支槍指著的危急時刻還在輸入僅僅只是驗證是否存在漏洞實際上並無攻擊能力的 [PoC(Proof of concept)](https://zh.wikipedia.org/wiki/%E6%A6%82%E5%BF%B5%E9%AA%8C%E8%AF%81) 呢，此 PoC 在已經拿到可以下bash的情況下是沒有辦法有更深度的利用，頂多知道bash存在shellshock漏洞，Finch是不是嫉妒Reese太帥想搞死他呀(((ﾟДﾟ;)))
 看更仔細發現 bash-c 中間少個空白耶！這樣的 PoC 可能沒辦法正常運行，我們等一下做個測試看看
 
-![](/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/4.webp)
+![唐伯虎點秋香劇照，吐槽這道指令根本沒有攻擊力](/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/4.webp)
 
 來源：唐伯虎點秋香劇照
 
-![](/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/5.webp)
+![調侃指令少打一個空白就無法執行的網路梗圖](/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/5.webp)
 
 打錯會哭哭喔。圖片來源：imgflip.com
 
 個人猜測可能是劇組人員想加入真實的攻擊手法但尚未了解其原理，但跟台灣鄉土劇的駭客嘴上說防火牆很難入侵但實際上亂打指令與使用 PPT 還沒全螢幕播放已經好上幾百倍了(拜託台灣連續劇快來找專業的資安人員當顧問呀~~)，而且當疑犯追蹤第四季播出首集也才2014的9月，所以幾乎是公布弱點PoC沒多久就將其編入劇中，已經算是相當用心了
 
-![](/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/6.webp)
+![台灣連續劇裡演員在 Windows 命令提示字元亂打指令的畫面](/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/6.webp)
 
 windows cmd亂輸入。圖片來源：台灣連續劇-天下女人心劇照
 
 # 漏洞模擬與測試
 接下來讓我們來實際測試shellshock弱點看看吧！在研究漏洞的時候光是建立存在漏洞環境就需要許多時間，幸好有Vulhub已經建立了一堆的docker漏洞環境與簡單的Exploit或PoC，我們只需要安裝docker並且下載vulhub的檔案就可以很輕鬆隨意的建立與移除漏洞環境
 
-![](/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/7.webp)
+![Vulhub 網站頁面，收錄各種 docker 漏洞測試環境](/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/7.webp)
 
 超級方便的漏洞環境建立網站。圖片來源：Vulhub
 
@@ -104,7 +106,7 @@ b17e8c30a67b        vulhub/bash:4.3.0-with-httpd   "apache2ctl -DFOREGR…"   3 
 
 我們嘗試存取對應的ip:port/path (請依照自己的環境修改)，發現都是顯示Hello world
 
-![](/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/8.webp)
+![瀏覽器開啟 victim.cgi 與 safe.cgi 皆回應 Hello world](/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/8.webp)
 
 存取對應路徑顯示Hello world代表環境已經正常執行
 
@@ -122,26 +124,26 @@ User-Agent: () { foo; }; echo Content-Type: text/plain; echo; /usr/bin/id
 uid=33(www-data) gid=33(www-data) groups=33(www-data)
 ```
 
-![](/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/9.webp)
+![Burp Suite 改寫 User-Agent 攻擊 victim.cgi，成功取得 id 輸出](/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/9.webp)
 
 利用Burp Suite攔截封包並修改後攻擊shellshock漏洞成功
 
 再來嘗試相同的攻擊語法，僅將路徑改為safe.cgi，果然攻擊失敗了
 
-![](/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/10.webp)
+![相同語法送往安全版 bash 的 safe.cgi，未執行注入指令](/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/10.webp)
 
 利用Burp Suite攔截封包並修改後攻擊shellshock漏洞失敗
 
 
 接著我們來嘗試進入docker裡面跑影片中的PoC，發現的確影片中的指令少個空格，系統告訴我們找不到bash-c這個檔案或資料夾，在bash與-c中加入空格之後就成功顯示vulnerable與whoami的結果了
 
-![](/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/11.webp)
+![容器內執行劇中 PoC，補上空白後印出 vulnerable 與 whoami](/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/11.webp)
 
 進入docker內測試PoC結果
 
 我們嘗試以Ubuntu較新的4.4.20版本bash嘗試看看，發現尚未將bash與-c分開之前仍然是失敗，修改後也只能顯示whoami的結果，並未顯示vulnerable，代表此弱點已經修補
 
-![](/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/12.webp)
+![已修補的 bash 4.4.20 執行同一 PoC 只回傳 whoami 結果](/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/12.webp)
 
 於無shellshock漏洞之環境測試PoC結果
 假如已經測試完畢記得將docker先停止
@@ -151,7 +153,7 @@ uid=33(www-data) gid=33(www-data) groups=33(www-data)
 sudo docker stop shellshock_web_1
 ```
 
-![](/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/13.webp)
+![終端機執行 docker stop 關閉 shellshock 測試容器](/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/13.webp)
 
 停止shellshock之docker環境
 
@@ -159,7 +161,7 @@ sudo docker stop shellshock_web_1
 
 測試完畢後我們來理解一下原理，在linux的環境下可以用設定環境變數甚至function，如下圖於shell中的PoC，綠色部分就是正常使用環境變數，而shellshock就是針對bash 對環境變數的解析上的污染，紅色部分就是攻擊者在環境變數中塞入惡意指令，而藍色部分是當使用bash的時候，此時就會將當初我們設定環境變數裡面的紅色部分惡意指令也執行
 
-![](/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/14.webp)
+![以綠紅藍三色標示環境變數遭污染並執行惡意指令的流程圖](/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/14.webp)
 
 shellshock原理。圖片來源：OWASP
 

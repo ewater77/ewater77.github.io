@@ -2,7 +2,7 @@
 title: 這才不算是入侵，因為你所有的密碼都一樣 - 宅男行不行 The Big Bang Theory S02E09, S09E09
 date: 2024-05-02 01:26:21
 tags: 
-    - secuirty
+    - security
     - 資訊安全
     - 看電影學資安
     - drama
@@ -10,11 +10,13 @@ tags:
 description: "看電影學資安：從宅男行不行 Leonard 的密碼習慣談密碼安全，為什麼生日不該當密碼、重複使用密碼會招來撞庫攻擊，以及正確的密碼管理方式。"
 categories:
     - 看電影學資安
+series: 看電影學資安
+noticeOutdate: false
 cover: /images/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/3.webp
 ---
 嗨，大家好，我是[ISDA](https://www.isda.org.tw/)的Walter，看電影(劇)學資安又來了，這次我們來看看幽默好笑又可以學習科學詞彙的The Big Bang Theory(宅男行不行)與最近的話題韓劇魷魚遊戲，看這些劇中有什麼關於資安的部分
 
-![](/images/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/1.webp)
+![宅男行不行主要角色群的宣傳劇照](/images/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/1.webp)
 
 The Big Bang Theory劇照，圖片來源：https://paperbacks.pixnet.net/blog/post/167057184
 
@@ -23,21 +25,21 @@ The Big Bang Theory劇照，圖片來源：https://paperbacks.pixnet.net/blog/po
 
 在第二季第九集，Leonard交到一個外科醫生女友時，Sheldon很滿意Leonard這位女友，因為身為Star Trek粉絲在他幻想中的太空探險中有個醫官麥考伊是必要的，Sheldon擔心以Leonard的交往經驗大概沒多久就會分手，因此自作主張盜用Leonard的Facebook帳號送出交往關係確認請求。在Sheldon被發現盜用帳號後嘴了一句：『那根本不算盜帳號，你每個網站都用同個密碼—Kal-El』
 
-![](/images/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/2.webp)
+![Leonard發現Sheldon擅自登入他的Facebook帳號](/images/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/2.webp)
 
 Leonard被Sheldon盜用Facebook帳號。圖片來源：The Big Bang Theory 宅男行不行
 
-![](/images/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/3.webp)
+![Sheldon說Leonard每個網站都用同一組密碼Kal-El](/images/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/3.webp)
 
 Sheldon反嗆你的密碼都設定同一組。圖片來源：The Big Bang Theory 宅男行不行
 
 在第七季第七集，Leonard的另一任女友Penny想打開iPad，Leonard告訴Penny iPad密碼是Leonard的生日，雖然Penny根本不知道Leonard的生日….
 
-![](/images/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/4.webp)
+![Penny拿著iPad詢問Leonard解鎖密碼的劇照](/images/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/4.webp)
 
 Leonard告訴Penny iPad密碼。圖片來源：The Big Bang Theory 宅男行不行
 
-![](/images/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/5.webp)
+![Leonard坦承自己的iPad密碼就是生日](/images/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/5.webp)
 
 密碼設定為生日的Leonard。圖片來源：The Big Bang Theory 宅男行不行
 
@@ -57,15 +59,15 @@ Leonard身為智商173的天才在密碼使用上卻很可惜的不算聰明，�
 * 你的email地址是否包含生日，例如walter1010@gmail.com，駭客很容易猜到你的生日很有可能就是十月十日
 * 其他你可能洩漏生日的地方，例如某某問卷或某某網站等，駭客可以藉由公開來源情資(Open-source intelligence, OSINT,)收集到你的資訊
 
-![](/images/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/6.webp)
+![魷魚遊戲中成奇勳在提款機前嘗試輸入密碼](/images/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/6.webp)
 成奇勳媽媽的提款卡之前是用成奇勳的生日當密碼。圖片來源：Squid Game 魷魚遊戲
 
-![](/images/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/7.webp)
+![成奇勳以女兒生日成功猜出提款卡密碼](/images/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/7.webp)
 成奇勳第三次終於猜到媽媽提款卡是設定自己女兒的生日。圖片來源：Squid Game 魷魚遊戲
 
 為什麼Kal-El不是密碼的好選擇
 - 列於有名駭客攻擊字典[rockyou.txt](https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt)，駭客如果要進行字典攻擊法很有可能猜到
-![](/images/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/8.webp)
+![rockyou.txt字典檔中搜尋到Kal-El的畫面](/images/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/8.webp)
 
 Kal-El列於駭客字典rockyou.txt
 
@@ -78,7 +80,7 @@ Kal-El列於駭客字典rockyou.txt
 - 盡可能打開雙因素驗證，Google Authenticator又比手機OTP跟信箱好
 - 不要使用外洩的密碼，那麼怎麼知道自己的密碼是否外洩了，可以考慮使用[haveibeenpwn](https://haveibeenpwned.com/)來查看
 
-![](/images/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/9.webp)
+![haveibeenpwned網站顯示信箱密碼外洩查詢結果](/images/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/9.webp)
 email輸入haveibeenpwn後假如發現有外洩便會告知，不過walter@gmail.com 不是我的信箱(逃
 
 * 每個網站都使用不同密碼，但這個有相當難度，所以建議使用密碼管理器

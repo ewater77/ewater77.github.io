@@ -2,7 +2,7 @@
 title: IoT世代，萬物皆可駭 - CSI Cyber S01E02
 date: 2024-05-01 23:03:18
 tags: 
-    - secuirty
+    - security
     - 資訊安全
     - 看電影學資安
     - drama
@@ -10,6 +10,8 @@ tags:
 description: "看電影學資安：CSI Cyber 第一季第二集駭客攻擊雲霄飛車釀成死傷，從劇情看 IoT 時代的資安威脅，連汽車警報器都能被入侵的真實案例。"
 categories:
     - 看電影學資安
+series: 看電影學資安
+noticeOutdate: false
 cover: /images/CyberSec-in-movie-CSI-Cyber-S01E02/8.webp
 ---
 
@@ -23,20 +25,20 @@ cover: /images/CyberSec-in-movie-CSI-Cyber-S01E02/8.webp
 
 希望大家都能夠成為功力高強的白帽駭客，而不是為非作歹的黑帽駭客唷!
 
-![](/images/CyberSec-in-movie-CSI-Cyber-S01E02/1.webp)
+![影集開場介紹黑帽駭客定義的字卡畫面](/images/CyberSec-in-movie-CSI-Cyber-S01E02/1.webp)
 
 此集的故事起源於駭客攻擊了遊樂場的雲霄飛車，使得乘客死亡或受傷
 
-![](/images/CyberSec-in-movie-CSI-Cyber-S01E02/2.webp)
+![駭客以手機應用程式模擬操控雲霄飛車的畫面](/images/CyberSec-in-movie-CSI-Cyber-S01E02/2.webp)
 
 圖為攻擊者模擬的雲霄飛車以及攻擊用的App
 雲霄飛車也能進行攻擊，似乎有點神奇～ 揪竟是怎麼回事呢?
-![](/images/CyberSec-in-movie-CSI-Cyber-S01E02/3.webp)
+![雲霄飛車出軌釀成死傷的事故現場劇照](/images/CyberSec-in-movie-CSI-Cyber-S01E02/3.webp)
 
 發生事故之後確定煞車、軌道以及車體本身都正常，懷疑是系統被入侵，因此將此案件交由了Cyber Team
 
 首先就是將錄影畫面以及系統診斷的資訊調出以協助判斷案情…
-![](/images/CyberSec-in-movie-CSI-Cyber-S01E02/4.webp)
+![Cyber Team 調閱監視錄影與系統診斷資訊辦案](/images/CyberSec-in-movie-CSI-Cyber-S01E02/4.webp)
 
 
 此集讓我們關注的點有哪些呢
@@ -59,8 +61,8 @@ Ryan為了警告前黑帽的Nelson，攻擊了他車子的警報器，而且只�
 
 於是有了Wi-Fi名稱與密碼，攻擊者可以對車子的設定進行任意修改，例如關閉警報器。可參考[原文](https://www.pentestpartners.com/blog/hacking-the-mitsubishi-outlander-phev-hybrid-suv/)
 
-![](/images/CyberSec-in-movie-CSI-Cyber-S01E02/5.webp)
-![](/images/CyberSec-in-movie-CSI-Cyber-S01E02/6.webp)
+![Ryan 入侵 Nelson 汽車警報器示警的劇照](/images/CyberSec-in-movie-CSI-Cyber-S01E02/5.webp)
+![以手機 App 遠端控制汽車功能的畫面](/images/CyberSec-in-movie-CSI-Cyber-S01E02/6.webp)
 
 在這IoT正夯的時代，什麼都可以入侵，入侵有電腦的車子也不是第一次聽到了
 
@@ -86,8 +88,8 @@ Ryan為了警告前黑帽的Nelson，攻擊了他車子的警報器，而且只�
 
 FBI檢查操控機房的出入紀錄，竟然短短一分鐘內被17位員工刷卡要進入
 
-![](/images/CyberSec-in-movie-CSI-Cyber-S01E02/7.webp)
-![](/images/CyberSec-in-movie-CSI-Cyber-S01E02/8.webp)
+![FBI 檢視機房門禁出入紀錄的畫面](/images/CyberSec-in-movie-CSI-Cyber-S01E02/7.webp)
+![一分鐘內十七名員工刷卡的異常紀錄清單](/images/CyberSec-in-movie-CSI-Cyber-S01E02/8.webp)
 
 
 除非這是上班打卡的地方外加快九點了，不然就是一定有鬼XD
@@ -108,8 +110,8 @@ FBI檢查操控機房的出入紀錄，竟然短短一分鐘內被17位員工刷
 
 PM3可以很輕鬆的竊聽資訊，以及輕易的偽造卡號，根本是請同事幫忙上班打卡的好工具呀!! (好孩子不要學
 
-![](/images/CyberSec-in-movie-CSI-Cyber-S01E02/9.webp)
-![](/images/CyberSec-in-movie-CSI-Cyber-S01E02/10.webp)
+![RFID 攻擊工具 ProxMark3 的實體外觀](/images/CyberSec-in-movie-CSI-Cyber-S01E02/9.webp)
+![以 ProxMark3 讀取並複製門禁卡片的操作](/images/CyberSec-in-movie-CSI-Cyber-S01E02/10.webp)
 
 本協會的烏魚子大大利用PM3做了一個簡短但有趣的複製卡片實作影片，有興趣的可以點[Youtube連結參考](https://www.youtube.com/watch?v=7hTYBUFCPuw)
 
@@ -123,7 +125,7 @@ PM3可以很輕鬆的竊聽資訊，以及輕易的偽造卡號，根本是請�
 
 因此判定很有可能為雲霄飛車的系統被入侵了
 
-![](/images/CyberSec-in-movie-CSI-Cyber-S01E02/11.webp)
+![劇中講解雲霄飛車軌道感測器運作的畫面](/images/CyberSec-in-movie-CSI-Cyber-S01E02/11.webp)
 
 Krumitz經過檢查之後判定雲霄飛車系統根本不可能被遠端入侵，因為電腦根本沒有接網路線呀
 
@@ -131,8 +133,8 @@ Krumitz經過檢查之後判定雲霄飛車系統根本不可能被遠端入侵�
 
 遊樂園的工程師也說這個系統根本沒有接WiFi或者藍牙，所以FBI判定為攻擊者是直接接觸電腦進行攻擊
 
-![](/images/CyberSec-in-movie-CSI-Cyber-S01E02/12.webp)
-![](/images/CyberSec-in-movie-CSI-Cyber-S01E02/13.webp)
+![Krumitz 檢查未連網的雲霄飛車控制電腦](/images/CyberSec-in-movie-CSI-Cyber-S01E02/12.webp)
+![工程師說明控制系統沒有 WiFi 與藍牙連線](/images/CyberSec-in-movie-CSI-Cyber-S01E02/13.webp)
 
 
 後來Krumitz找出攻擊者的真正手法原來是利用了[單板電腦(Single Board Computer)](https://zh.wikipedia.org/wiki/%E5%8D%95%E6%9D%BF%E6%9C%BA)
@@ -143,13 +145,13 @@ Krumitz經過檢查之後判定雲霄飛車系統根本不可能被遠端入侵�
 
 單板電腦簡單來說就是長寬如名片大小的電腦，世界最為知名的單板電腦為[樹莓派(Raspberry Pi)](https://zh.wikipedia.org/wiki/%E6%A0%91%E8%8E%93%E6%B4%BE)
 
-![](/images/CyberSec-in-movie-CSI-Cyber-S01E02/14.webp)
+![名片大小的樹莓派單板電腦電路板](/images/CyberSec-in-movie-CSI-Cyber-S01E02/14.webp)
 
 樹莓派便宜的價格、還算夠用的硬體配備、以及眾多的開發資源讓單板電腦的發展突飛猛進
 
 以 Pi 5來說就有內建Ethernet、WiFi以及藍牙，實在是駭客居家旅遊入侵電腦的必備良藥XD
 
-![](/images/CyberSec-in-movie-CSI-Cyber-S01E02/15.webp)
+![樹莓派專用的 Kali Linux 滲透測試系統](/images/CyberSec-in-movie-CSI-Cyber-S01E02/15.webp)
 
 Kali還有特別製作一個給Raspberry pi的版本唷，製作方式可以參考這邊跟這邊
 
@@ -169,7 +171,7 @@ BD_ADDR是一組由48bit所組成的唯一數值
 
 顯示的方式都會以如 21:14:15:77:22:a0 的顯示方式出現
 
-![](/images/CyberSec-in-movie-CSI-Cyber-S01E02/16.webp)
+![劇中顯示攻擊者藍牙裝置位址的畫面](/images/CyberSec-in-movie-CSI-Cyber-S01E02/16.webp)
 
 
 接著FBI就使用Bluetooth Scanner來掃描攻擊者的藍芽裝置位址
@@ -178,7 +180,7 @@ BD_ADDR是一組由48bit所組成的唯一數值
 
 FBI藉由藍芽的配對才找到攻擊者的大約位置
 
-![](/images/CyberSec-in-movie-CSI-Cyber-S01E02/17.webp)
+![FBI 以藍牙掃描器搜索攻擊者所在位置](/images/CyberSec-in-movie-CSI-Cyber-S01E02/17.webp)
 
 但是發現攻擊者已經把控制樹莓派的手機丟棄
 
@@ -186,7 +188,7 @@ FBI藉由藍芽的配對才找到攻擊者的大約位置
 
 至於怎麼靠行為心理學的就請各位自行觀賞吧XD
 
-![](/images/CyberSec-in-movie-CSI-Cyber-S01E02/18.webp)
+![探員運用行為心理學逼出嫌犯的劇照](/images/CyberSec-in-movie-CSI-Cyber-S01E02/18.webp)
 
 5. 暗網什麼都有，什麼都不奇怪!
 
@@ -208,7 +210,7 @@ Tor匿名的原理就如同下圖，串連幾台Tor node(跳板)再連接到目�
 
 因此目的主機看到的IP是最後一個node的IP，藉此達到匿名上網的目的
 
-![](/images/CyberSec-in-movie-CSI-Cyber-S01E02/19.webp)
+![Tor 洋蔥路由經多重節點跳板的匿名連線示意圖](/images/CyberSec-in-movie-CSI-Cyber-S01E02/19.webp)
 
 那就來逛逛暗網吧，來看看暗網到底長什麼樣子
 
@@ -218,7 +220,7 @@ Tor匿名的原理就如同下圖，串連幾台Tor node(跳板)再連接到目�
 
 我們可以看到有賣毒品、詐欺相關、教學、服務、寶石、數位商品等有些看起來就是違法的東西
 
-![](/images/CyberSec-in-movie-CSI-Cyber-S01E02/20.webp)
+![暗網 HANSA Market 的商品分類頁面截圖](/images/CyberSec-in-movie-CSI-Cyber-S01E02/20.webp)
 
 
 我們身為資安研究人員最感興趣的當然是數位商品啦，我們就繼續往下看
@@ -227,7 +229,7 @@ Tor匿名的原理就如同下圖，串連幾台Tor node(跳板)再連接到目�
 
 裡面內容是包含已經幫你解完密碼的 Email與密碼的組合，共有十萬組，而且價格只需要10.48美金
 
-![](/images/CyberSec-in-movie-CSI-Cyber-S01E02/21.webp)
+![暗網販售 Yahoo 外洩帳號密碼資料庫的頁面](/images/CyberSec-in-movie-CSI-Cyber-S01E02/21.webp)
 
 如果有心人士取得這些資料就可能可以拿來登入你Yahoo!的帳號
 
@@ -253,8 +255,8 @@ Tor匿名的原理就如同下圖，串連幾台Tor node(跳板)再連接到目�
 
 因此也是主管需要高度關注的事項
 
-![](/images/CyberSec-in-movie-CSI-Cyber-S01E02/22.webp)
-![](/images/CyberSec-in-movie-CSI-Cyber-S01E02/23.webp)
+![Nelson 邀請 Krumitz 看電影的對話場景](/images/CyberSec-in-movie-CSI-Cyber-S01E02/22.webp)
+![Krumitz 為趕結案報告而無法赴約的劇照](/images/CyberSec-in-movie-CSI-Cyber-S01E02/23.webp)
 
 
 在此推薦一個自動產出滲透測試報告的好軟體Dradis Pro (非業配XD)
@@ -265,7 +267,7 @@ Tor匿名的原理就如同下圖，串連幾台Tor node(跳板)再連接到目�
 
 這樣就不會找不到弱點也煩惱，找到很多弱點也很煩惱了，哈哈哈哈
 
-![](/images/CyberSec-in-movie-CSI-Cyber-S01E02/24.webp)
+![滲透測試報告產出工具 Dradis Pro 介面](/images/CyberSec-in-movie-CSI-Cyber-S01E02/24.webp)
 
 隨著科技的進步，連網裝置成本越來越低，每個裝置幾乎都有基本的運算能力
 
@@ -281,7 +283,7 @@ Tor匿名的原理就如同下圖，串連幾台Tor node(跳板)再連接到目�
 
 謝謝各位的觀賞，看電影學資安～ 我們下次見～ (揮手
 
-![](/images/CyberSec-in-movie-CSI-Cyber-S01E02/25.gif)
+![劇中角色揮手道別的動態圖](/images/CyberSec-in-movie-CSI-Cyber-S01E02/25.gif)
 
 對資訊安全有興趣的朋友，歡迎至我們Facebook官方粉絲頁按讚並且分享喔！
 
