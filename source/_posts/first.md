@@ -9,7 +9,7 @@ description: "告別 Medium 的登入牆與付費牆，改用 Hexo 自建部落�
 categories:
     - 生活雜記
 noticeOutdate: false
-cover: /images/avatar.jpg
+cover: /images/avatar.png
 ---
 ## 為什麼從 Medium 搬出來
 
