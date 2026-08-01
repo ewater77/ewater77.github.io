@@ -11,7 +11,7 @@
   <rights>All rights reserved 2026, Walter</rights>
   <subtitle>一位喜歡駭客技術、遊戲及追劇的工程師</subtitle>
   <title>Walter's Blog</title>
-  <updated>2026-07-26T16:00:00.000Z</updated>
+  <updated>2026-07-31T05:29:46.000Z</updated>
   <entry>
     <author>
       <name>Walter</name>
@@ -27,15 +27,15 @@
     <published>2026-07-26T16:00:00.000Z</published>
     <summary>自架網站廠商必讀：避免原始碼及其他機敏資料外洩，簡易自我檢測網站是否把 .git 目錄與金流金鑰一起公開，並提供判讀、金鑰更換、通報綠界科技做法。</summary>
     <title>.git 目錄外洩自我檢測、修補與通報指南</title>
-    <updated>2026-07-26T16:00:00.000Z</updated>
+    <updated>2026-07-31T05:29:46.000Z</updated>
   </entry>
   <entry>
     <author>
       <name>Walter</name>
     </author>
     <category term="資訊安全" scheme="https://blog.walter.com.tw/categories/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
-    <category term="security" scheme="https://blog.walter.com.tw/tags/security/"/>
     <category term="資訊安全" scheme="https://blog.walter.com.tw/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
+    <category term="security" scheme="https://blog.walter.com.tw/tags/security/"/>
     <category term="密碼安全" scheme="https://blog.walter.com.tw/tags/%E5%AF%86%E7%A2%BC%E5%AE%89%E5%85%A8/"/>
     <category term="加密" scheme="https://blog.walter.com.tw/tags/%E5%8A%A0%E5%AF%86/"/>
     <category term="明文密碼" scheme="https://blog.walter.com.tw/tags/%E6%98%8E%E6%96%87%E5%AF%86%E7%A2%BC/"/>
@@ -44,15 +44,15 @@
     <published>2025-08-22T20:18:29.000Z</published>
     <summary>2025 年了還有網站明文儲存密碼！說明明文密碼的危險、撞庫攻擊的風險，教你用忘記密碼功能簡單判斷網站是否正確使用雜湊保護你的密碼。</summary>
     <title>我的密碼沒加密</title>
-    <updated>2025-08-22T20:18:29.000Z</updated>
+    <updated>2026-08-01T02:08:09.000Z</updated>
   </entry>
   <entry>
     <author>
       <name>Walter</name>
     </author>
     <category term="資訊安全" scheme="https://blog.walter.com.tw/categories/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
-    <category term="security" scheme="https://blog.walter.com.tw/tags/security/"/>
     <category term="資訊安全" scheme="https://blog.walter.com.tw/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
+    <category term="security" scheme="https://blog.walter.com.tw/tags/security/"/>
     <category term="Social Engineer" scheme="https://blog.walter.com.tw/tags/Social-Engineer/"/>
     <category term="防詐騙" scheme="https://blog.walter.com.tw/tags/%E9%98%B2%E8%A9%90%E9%A8%99/"/>
     <id>https://blog.walter.com.tw/2024/09/07/Anti-Social-Engineer/</id>
@@ -60,15 +60,15 @@
     <published>2024-09-06T16:00:00.000Z</published>
     <summary>防詐騙實用手冊：解析詐騙集團的社交工程話術，教你看懂網址結構、辨別假網站與釣魚連結，5 分鐘提升防詐能力，別再當詐騙集團的薯條。</summary>
     <title>防詐騙入門：社交工程與假網站辨識</title>
-    <updated>2024-09-06T16:00:00.000Z</updated>
+    <updated>2026-08-01T06:45:00.000Z</updated>
   </entry>
   <entry>
     <author>
       <name>Walter</name>
     </author>
     <category term="看電影學資安" scheme="https://blog.walter.com.tw/categories/%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89/"/>
-    <category term="security" scheme="https://blog.walter.com.tw/tags/security/"/>
     <category term="資訊安全" scheme="https://blog.walter.com.tw/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
+    <category term="security" scheme="https://blog.walter.com.tw/tags/security/"/>
     <category term="看電影學資安" scheme="https://blog.walter.com.tw/tags/%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89/"/>
     <category term="drama" scheme="https://blog.walter.com.tw/tags/drama/"/>
     <category term="The Big Bang Theory" scheme="https://blog.walter.com.tw/tags/The-Big-Bang-Theory/"/>
@@ -77,15 +77,15 @@
     <published>2024-05-01T17:26:21.000Z</published>
     <summary>看電影學資安：從宅男行不行 Leonard 的密碼習慣談密碼安全，為什麼生日不該當密碼、重複使用密碼會招來撞庫攻擊，以及正確的密碼管理方式。</summary>
     <title>這才不算是入侵，因為你所有的密碼都一樣 - 宅男行不行 The Big Bang Theory S02E09, S09E09</title>
-    <updated>2024-05-01T17:26:21.000Z</updated>
+    <updated>2026-08-01T03:03:06.000Z</updated>
   </entry>
   <entry>
     <author>
       <name>Walter</name>
     </author>
     <category term="看電影學資安" scheme="https://blog.walter.com.tw/categories/%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89/"/>
-    <category term="security" scheme="https://blog.walter.com.tw/tags/security/"/>
     <category term="資訊安全" scheme="https://blog.walter.com.tw/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
+    <category term="security" scheme="https://blog.walter.com.tw/tags/security/"/>
     <category term="看電影學資安" scheme="https://blog.walter.com.tw/tags/%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89/"/>
     <category term="drama" scheme="https://blog.walter.com.tw/tags/drama/"/>
     <category term="Person of Interest" scheme="https://blog.walter.com.tw/tags/Person-of-Interest/"/>
@@ -94,15 +94,15 @@
     <published>2024-05-01T16:56:04.000Z</published>
     <summary>看電影學資安：疑犯追蹤 S04E11 劇中出現的 Shellshock（CVE-2014-6271）攻擊指令，分析這段 PoC 的正確性與實際可利用性，順便吐槽戲劇裡的駭客畫面。</summary>
     <title>你是不是要玩死我呀 - 疑犯追蹤 Person of Interest S04E11 (IF-THEN-ELSE)</title>
-    <updated>2024-05-01T16:56:04.000Z</updated>
+    <updated>2026-08-01T03:03:06.000Z</updated>
   </entry>
   <entry>
     <author>
       <name>Walter</name>
     </author>
     <category term="看電影學資安" scheme="https://blog.walter.com.tw/categories/%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89/"/>
-    <category term="security" scheme="https://blog.walter.com.tw/tags/security/"/>
     <category term="資訊安全" scheme="https://blog.walter.com.tw/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
+    <category term="security" scheme="https://blog.walter.com.tw/tags/security/"/>
     <category term="看電影學資安" scheme="https://blog.walter.com.tw/tags/%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89/"/>
     <category term="drama" scheme="https://blog.walter.com.tw/tags/drama/"/>
     <category term="CSI Cyber" scheme="https://blog.walter.com.tw/tags/CSI-Cyber/"/>
@@ -111,15 +111,15 @@
     <published>2024-05-01T16:14:49.000Z</published>
     <summary>看電影學資安：CSI Cyber 第二季第一集的 WarDriving 攻擊，智慧娃娃被入侵監聽、掃地機器人與遊戲機成為數位鑑識關鍵，手機洩漏的資訊超乎你的想像。</summary>
     <title>開車順路經過就入侵你家 - CSI Cyber S02E01</title>
-    <updated>2024-05-01T16:14:49.000Z</updated>
+    <updated>2026-08-01T06:45:00.000Z</updated>
   </entry>
   <entry>
     <author>
       <name>Walter</name>
     </author>
     <category term="看電影學資安" scheme="https://blog.walter.com.tw/categories/%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89/"/>
-    <category term="security" scheme="https://blog.walter.com.tw/tags/security/"/>
     <category term="資訊安全" scheme="https://blog.walter.com.tw/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
+    <category term="security" scheme="https://blog.walter.com.tw/tags/security/"/>
     <category term="看電影學資安" scheme="https://blog.walter.com.tw/tags/%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89/"/>
     <category term="drama" scheme="https://blog.walter.com.tw/tags/drama/"/>
     <category term="CSI Cyber" scheme="https://blog.walter.com.tw/tags/CSI-Cyber/"/>
@@ -128,15 +128,15 @@
     <published>2024-05-01T15:03:18.000Z</published>
     <summary>看電影學資安：CSI Cyber 第一季第二集駭客攻擊雲霄飛車釀成死傷，從劇情看 IoT 時代的資安威脅，連汽車警報器都能被入侵的真實案例。</summary>
     <title>IoT 世代，萬物皆可駭 - CSI Cyber S01E02</title>
-    <updated>2024-05-01T15:03:18.000Z</updated>
+    <updated>2026-08-01T06:45:00.000Z</updated>
   </entry>
   <entry>
     <author>
       <name>Walter</name>
     </author>
     <category term="看電影學資安" scheme="https://blog.walter.com.tw/categories/%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89/"/>
-    <category term="security" scheme="https://blog.walter.com.tw/tags/security/"/>
     <category term="資訊安全" scheme="https://blog.walter.com.tw/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
+    <category term="security" scheme="https://blog.walter.com.tw/tags/security/"/>
     <category term="看電影學資安" scheme="https://blog.walter.com.tw/tags/%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89/"/>
     <category term="drama" scheme="https://blog.walter.com.tw/tags/drama/"/>
     <category term="CSI Cyber" scheme="https://blog.walter.com.tw/tags/CSI-Cyber/"/>
@@ -145,15 +145,15 @@
     <published>2024-05-01T14:33:56.000Z</published>
     <summary>看電影學資安：從 CSI Cyber 第一季第一集的嬰兒監視器入侵案，學習數位證據保存、法拉第袋的用途，以及為什麼最了解黑帽駭客的就是黑帽駭客。</summary>
     <title>能力越強責任越大 - CSI Cyber S01E01</title>
-    <updated>2024-05-01T14:33:56.000Z</updated>
+    <updated>2026-08-01T06:45:00.000Z</updated>
   </entry>
   <entry>
     <author>
       <name>Walter</name>
     </author>
     <category term="看電影學資安" scheme="https://blog.walter.com.tw/categories/%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89/"/>
-    <category term="security" scheme="https://blog.walter.com.tw/tags/security/"/>
     <category term="資訊安全" scheme="https://blog.walter.com.tw/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
+    <category term="security" scheme="https://blog.walter.com.tw/tags/security/"/>
     <category term="看電影學資安" scheme="https://blog.walter.com.tw/tags/%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89/"/>
     <category term="drama" scheme="https://blog.walter.com.tw/tags/drama/"/>
     <category term="Macgyver" scheme="https://blog.walter.com.tw/tags/Macgyver/"/>
@@ -162,15 +162,15 @@
     <published>2024-05-01T13:49:30.000Z</published>
     <summary>看電影學資安：從新版馬蓋先 S01E02 的入侵劇情，介紹無線網路攻擊手法，包括 WEP 弱點、WPA/WPA2 密碼破解、WPS 與 Pixie Dust 攻擊，以及安全架設 AP 的建議。</summary>
     <title>你的 WiFi 就是我的 WiFi - 新百戰天龍 MacGyver 第一季 第二集 S01E02</title>
-    <updated>2024-05-01T13:49:30.000Z</updated>
+    <updated>2026-08-01T03:03:06.000Z</updated>
   </entry>
   <entry>
     <author>
       <name>Walter</name>
     </author>
     <category term="看電影學資安" scheme="https://blog.walter.com.tw/categories/%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89/"/>
-    <category term="security" scheme="https://blog.walter.com.tw/tags/security/"/>
     <category term="資訊安全" scheme="https://blog.walter.com.tw/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
+    <category term="security" scheme="https://blog.walter.com.tw/tags/security/"/>
     <category term="看電影學資安" scheme="https://blog.walter.com.tw/tags/%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89/"/>
     <category term="drama" scheme="https://blog.walter.com.tw/tags/drama/"/>
     <category term="Macgyver" scheme="https://blog.walter.com.tw/tags/Macgyver/"/>
@@ -179,15 +179,15 @@
     <published>2024-04-30T19:12:53.000Z</published>
     <summary>看電影學資安系列第一篇：從新版馬蓋先 MacGyver S01E01 認識邏輯炸彈、硬碟鑑識與逆向工程，以及號稱世界上最可怕的搜尋引擎 Shodan。</summary>
     <title>看電影學資安的第一篇 - 懷念的馬蓋先 新百戰天龍 MacGyver 第一季 第一集 S01E01</title>
-    <updated>2024-04-30T19:12:53.000Z</updated>
+    <updated>2026-08-01T03:03:06.000Z</updated>
   </entry>
   <entry>
     <author>
       <name>Walter</name>
     </author>
     <category term="資訊安全" scheme="https://blog.walter.com.tw/categories/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
-    <category term="security" scheme="https://blog.walter.com.tw/tags/security/"/>
     <category term="資訊安全" scheme="https://blog.walter.com.tw/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
+    <category term="security" scheme="https://blog.walter.com.tw/tags/security/"/>
     <category term="OSCP" scheme="https://blog.walter.com.tw/tags/OSCP/"/>
     <category term="證照" scheme="https://blog.walter.com.tw/tags/%E8%AD%89%E7%85%A7/"/>
     <category term="Offsec" scheme="https://blog.walter.com.tw/tags/Offsec/"/>
@@ -196,7 +196,7 @@
     <published>2024-04-30T14:35:29.000Z</published>
     <summary>菜雞一次考取 OSCP 的心得分享：課程與費用介紹、考試流程與報告撰寫注意事項，以及從 Vulnhub、HackTheBox 到 Lab 的完整準備路線建議。</summary>
     <title>從菜雞到 OSCP</title>
-    <updated>2024-04-30T14:35:29.000Z</updated>
+    <updated>2026-08-01T03:03:06.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -210,6 +210,6 @@
     <published>2024-04-28T16:00:00.000Z</published>
     <summary>告別 Medium 的登入牆與付費牆，改用 Hexo 自建部落格放上 GitHub，記錄開站緣由與安裝參考資源。</summary>
     <title>自建 blogger 開張</title>
-    <updated>2024-04-28T16:00:00.000Z</updated>
+    <updated>2026-08-01T03:03:06.000Z</updated>
   </entry>
 </feed>
