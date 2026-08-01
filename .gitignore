@@ -9,3 +9,4 @@ _multiconfig.yml
 # 本機的 images -> source/images 連結(VS Code Markdown 預覽用),
 # 各機器自行建立(macOS: ln -s / Windows: junction),不進版控以免 Dropbox 跨平台同步衝突
 images
+bash.exe.stackdump

@@ -20,8 +20,11 @@ cover: /images/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/3.webp
 
 The Big Bang Theory劇照，圖片來源：https://paperbacks.pixnet.net/blog/post/167057184
 
+## 影集介紹：宅男行不行
 
 故事是一群加州理工學院的宅男的生活，租住同一間公寓的實驗物理學家Leonard和理論物理學家Sheldon與他們朋友所發生的趣事
+
+## Sheldon 盜用 Leonard 的 Facebook 帳號
 
 在第二季第九集，Leonard交到一個外科醫生女友時，Sheldon很滿意Leonard這位女友，因為身為Star Trek粉絲在他幻想中的太空探險中有個醫官麥考伊是必要的，Sheldon擔心以Leonard的交往經驗大概沒多久就會分手，因此自作主張盜用Leonard的Facebook帳號送出交往關係確認請求。在Sheldon被發現盜用帳號後嘴了一句：『那根本不算盜帳號，你每個網站都用同個密碼—Kal-El』
 
@@ -33,6 +36,8 @@ Leonard被Sheldon盜用Facebook帳號。圖片來源：The Big Bang Theory 宅�
 
 Sheldon反嗆你的密碼都設定同一組。圖片來源：The Big Bang Theory 宅男行不行
 
+## iPad 解鎖密碼就是生日
+
 在第七季第七集，Leonard的另一任女友Penny想打開iPad，Leonard告訴Penny iPad密碼是Leonard的生日，雖然Penny根本不知道Leonard的生日….
 
 ![Penny拿著iPad詢問Leonard解鎖密碼的劇照](/images/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/4.webp)
@@ -42,6 +47,8 @@ Leonard告訴Penny iPad密碼。圖片來源：The Big Bang Theory 宅男行不�
 ![Leonard坦承自己的iPad密碼就是生日](/images/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/5.webp)
 
 密碼設定為生日的Leonard。圖片來源：The Big Bang Theory 宅男行不行
+
+## Leonard 的四個密碼問題
 
 Leonard身為智商173的天才在密碼使用上卻很可惜的不算聰明，在這些例子我們發現幾個問題：
 
@@ -59,13 +66,16 @@ Leonard身為智商173的天才在密碼使用上卻很可惜的不算聰明，�
 * 你的email地址是否包含生日，例如walter1010@gmail.com，駭客很容易猜到你的生日很有可能就是十月十日
 * 其他你可能洩漏生日的地方，例如某某問卷或某某網站等，駭客可以藉由公開來源情資(Open-source intelligence, OSINT,)收集到你的資訊
 
+### 魷魚遊戲的提款卡密碼例子
+
 ![魷魚遊戲中成奇勳在提款機前嘗試輸入密碼](/images/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/6.webp)
 成奇勳媽媽的提款卡之前是用成奇勳的生日當密碼。圖片來源：Squid Game 魷魚遊戲
 
 ![成奇勳以女兒生日成功猜出提款卡密碼](/images/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/7.webp)
 成奇勳第三次終於猜到媽媽提款卡是設定自己女兒的生日。圖片來源：Squid Game 魷魚遊戲
 
-為什麼Kal-El不是密碼的好選擇
+## 為什麼Kal-El不是密碼的好選擇
+
 - 列於有名駭客攻擊字典[rockyou.txt](https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt)，駭客如果要進行字典攻擊法很有可能猜到
 ![rockyou.txt字典檔中搜尋到Kal-El的畫面](/images/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/8.webp)
 

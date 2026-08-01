@@ -15,6 +15,8 @@ noticeOutdate: false
 cover: /images/CyberSec-in-movie-Macgyver-S01E01/2.webp
 ---
 
+## 懷念的馬蓋先回來拉
+
 累了嗎，聽首歌好嗎？
 
 https://www.youtube.com/watch?v=y7P2sH2PL-w
@@ -25,9 +27,13 @@ https://www.youtube.com/watch?v=y7P2sH2PL-w
 
 ===========有雷分隔線===========
 
+## 新版角色與加密硬碟登場
+
 ![新版馬蓋先影集海報與主角倚車喝汽水的劇照](/images/CyberSec-in-movie-Macgyver-S01E01/2.webp)
 
 新版馬蓋先Angus “Mac” MacGyver在一個美國的情報單位擔任特務，團隊裡面還有一位軍人退伍的打手Jack Dalton與女駭客Nikki Carpenter外加一位很有氣質的女主管Patricia Thornton，但因為原本團隊的女駭客Nikki在執行任務中被幹掉了，但是又需要她硬碟裡面的壞人照片，但是女駭客Nikki對於自己重要的資料又怎麼可能沒加密與保護呢？
+
+### 邏輯炸彈與物理拆彈法
 
 可憐的配角就跑出來說，誒靠！這個硬碟有加密，我也想要拿私鑰進行解密呀，但是
 
@@ -40,11 +46,15 @@ https://www.youtube.com/watch?v=y7P2sH2PL-w
 電腦壞了就沒有邏輯炸彈拉，真不愧是拆彈專家
 然後從電腦取出硬碟之後
 
+## 逆向工程取金鑰與鑑識備份觀念
+
 ![Riley手持硬碟說明將以唯讀方式掃描資料](/images/CyberSec-in-movie-Macgyver-S01E01/5.webp)
 ![Riley解說接著搜尋磁碟映像檔以取出金鑰](/images/CyberSec-in-movie-Macgyver-S01E01/6.webp)
 
 
 本鍵人認為配角可能是使用動態分析，而女駭客Riley以[逆向工程](https://zh.wikipedia.org/wiki/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B#.E8.BD.AF.E4.BB.B6)靜態分析的方式來取得金鑰，不過另外一提，為了保護資料，通常都會將硬碟用特殊工具將硬碟備份幾分再進行分析，不會直接從原本的硬碟進行分析，以免破壞重要資料(我從 [韓劇Phantom](https://zh.wikipedia.org/wiki/%E5%B9%BD%E9%9D%88_(%E9%9F%93%E5%9C%8B%E9%9B%BB%E8%A6%96%E5%8A%87)) 學來的，下次再來跟大家分享)，硬碟的私鑰就這樣被女駭客Riley拿到手拉(做了一堆邏輯炸彈，但是密碼都不用作保護的？哼，還說是高手～)，於是就開始分析資料，資料拿到之後就有壞人的長相的資料拉，但是人海茫茫要如何找到壞人呢？現任女駭客Riley當然不是省油的燈
+
+## 世界上最可怕的搜尋引擎 Shodan
 
 ![Riley低頭沉思說或許能用撒旦地圖找到目標](/images/CyberSec-in-movie-Macgyver-S01E01/7.webp)
 
@@ -62,11 +72,15 @@ https://www.youtube.com/watch?v=y7P2sH2PL-w
 
 可以攻擊所有有嚴重漏洞、弱密碼、預設密碼的網路攝影機(如轟動一時的[mirai](https://www.inside.com.tw/2016/10/23/what-the-latest-global-ddos-attack-means-for-entrepreneurs)病毒就是大量攻擊IoT設備來進行DDoS攻擊，威力非同小可)，連打手Jack都覺得強大得不真實，再搭配強大的運算能力與影像辨識技術 (大量的影像辨識實際上要做到可能非常難)，馬上就找到壞人在哪邊逛街吃雞排拉，照著劇情走，主角們藉由綁住壞人與壞人問事情的時候偷偷錄音
 
+## 聲音模仿技術大顯神威
+
 ![Riley確認錄音已集齊英語的每個音素](/images/CyberSec-in-movie-Macgyver-S01E01/11.webp)
 ![電腦螢幕顯示聲音複製完成與聲譜分析畫面](/images/CyberSec-in-movie-Macgyver-S01E01/12.webp)
 
 
 聲音模仿相關的技術在現在 AI 技術成長快速的環境下，已經有許多的商業軟體可以做到，甚至有許多的詐騙已經開始再利用，接著就用偽造的聲音打電話給另外一位壞人
+
+### 電話追蹤與 Tor 隱身術
 
 ![通話追蹤畫面顯示語音轉文字與城市地圖](/images/CyberSec-in-movie-Macgyver-S01E01/13.webp)
 
@@ -78,14 +92,15 @@ Tor真是個好東西呀～（菸
 
 接著後面的部分就沒有太多的資安拉，我就不繼續爆雷了，有興趣的朋友就自己去看看吧，不過個人覺得還是舊版的馬蓋先帥多了XD
 
-在這部戲中我們學到了什麼：
+## 在這部戲中我們學到了什麼
+
 1. 即使對於金鑰做了很多保護，只要有一個環節沒做好保護還是很容易被竊取
 2. 只要你把機器接上網路就要做好防護，駭客正在覬覦你的機器中，利用Shodan攻擊有弱點的機器只是彈指之間的事
 3. Tor是個隱藏身份的好用工具(但目前已經有許多研究單位已經研究出攻擊方法，千萬別以為做壞事沒人知道)
 4. 聲音模仿技術已經相當成熟，未來不可以僅聽聲音當作辨認的唯一條件，必須再三確認
 
 
-給新手的延伸閱讀：
+## 給新手的延伸閱讀
 
 [Freebuf — 逆向工程(三)：实例破解](http://www.freebuf.com/articles/system/87723.html)
 
