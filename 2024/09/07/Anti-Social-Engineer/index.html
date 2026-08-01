@@ -1,0 +1,787 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>防詐騙入門：社交工程與假網站辨識 | Walter's Blog</title><meta name="author" content="Walter"><meta name="copyright" content="Walter"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="防詐騙實用手冊：解析詐騙集團的社交工程話術，教你看懂網址結構、辨別假網站與釣魚連結，5 分鐘提升防詐能力，別再當詐騙集團的薯條。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="防詐騙入門：社交工程與假網站辨識">
+<meta property="og:url" content="https://blog.walter.com.tw/2024/09/07/Anti-Social-Engineer/">
+<meta property="og:site_name" content="Walter&#39;s Blog">
+<meta property="og:description" content="防詐騙實用手冊：解析詐騙集團的社交工程話術，教你看懂網址結構、辨別假網站與釣魚連結，5 分鐘提升防詐能力，別再當詐騙集團的薯條。">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://blog.walter.com.tw/images/Anti-Social-Engineer/social_engineer.png">
+<meta property="article:published_time" content="2024-09-06T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-09-06T16:00:00.000Z">
+<meta property="article:author" content="Walter">
+<meta property="article:tag" content="Social Engineer">
+<meta property="article:tag" content="security">
+<meta property="article:tag" content="資訊安全">
+<meta property="article:tag" content="防詐騙">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://blog.walter.com.tw/images/Anti-Social-Engineer/social_engineer.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://blog.walter.com.tw/2024/09/07/Anti-Social-Engineer/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="stylesheet" href="/css/index.css?v=5.6.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.14/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        const data = { value }
+
+        if (ttl != null) {
+          data.expiry = Date.now() + ttl * 86400000
+        }
+
+        localStorage.setItem(key, JSON.stringify(data))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return
+
+        try {
+          const data = JSON.parse(itemStr)
+
+          if (data.expiry && Date.now() > data.expiry) {
+            localStorage.removeItem(key)
+            return
+          }
+
+          return data.value
+        } catch {
+          localStorage.removeItem(key)
+        }
+      }
+    }
+
+    const scriptCache = new Map()
+    const cssCache = new Map()
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => {
+        if (scriptCache.has(url)) {
+          return scriptCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+
+          script.src = url
+          script.async = true
+
+          for (const key in attr) {
+            script.setAttribute(key, attr[key])
+          }
+
+          script.onload = resolve
+          script.onerror = reject
+
+          document.head.appendChild(script)
+        })
+
+        scriptCache.set(url, promise)
+
+        return promise
+      },
+      getCSS: (url, id) => {
+        if (cssCache.has(url)) {
+          return cssCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+
+          link.rel = 'stylesheet'
+          link.href = url
+
+          if (id) {
+            link.id = id
+          }
+
+          link.onload = resolve
+          link.onerror = reject
+
+          document.head.appendChild(link)
+        })
+
+        cssCache.set(url, promise)
+
+        return promise
+      },
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]')
+      const activateDarkMode = () => {
+        document.documentElement.dataset.theme = 'dark'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.dataset.theme = 'light'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const start = 6
+              const end = 18
+              const isNight =
+                start < end
+                    ? hour < start || hour >= end
+                    : hour >= start || hour < end
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-675Z38SG2F"></script><script>window.dataLayer = window.dataLayer || []
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date())
+gtag('config', 'G-675Z38SG2F')
+btf.addGlobalFn('pjaxComplete', () => {
+  gtag('config', 'G-675Z38SG2F', {'page_path': window.location.pathname})
+}, 'google_analytics')
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"找不到符合您查詢的內容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":500,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '複製成功',
+    error: '複製失敗',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '載入更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '防詐騙入門：社交工程與假網站辨識',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/atom.xml" title="Walter's Blog" type="application/atom+xml">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"防詐騙入門：社交工程與假網站辨識","description":"防詐騙實用手冊：解析詐騙集團的社交工程話術，教你看懂網址結構、辨別假網站與釣魚連結，5 分鐘提升防詐能力，別再當詐騙集團的薯條。","url":"https://blog.walter.com.tw/2024/09/07/Anti-Social-Engineer/","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.walter.com.tw/2024/09/07/Anti-Social-Engineer/"},"datePublished":"2024-09-06T16:00:00.000Z","dateModified":"2024-09-06T16:00:00.000Z","inLanguage":"zh-TW","author":{"@type":"Person","name":"Walter","url":"https://blog.walter.com.tw"},"image":"https://blog.walter.com.tw/images/Anti-Social-Engineer/social_engineer.png","keywords":"資訊安全,security,Social Engineer,防詐騙"}</script></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/images/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/ loading='lazy'></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 歸檔</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Walter's Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">防詐騙入門：社交工程與假網站辨識</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首頁</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜尋</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 歸檔</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">防詐騙入門：社交工程與假網站辨識</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2024-09-06T16:00:00.000Z" title="發表於 2024-09-07 00:00:00">2024-09-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2024-09-06T16:00:00.000Z" title="更新於 2024-09-07 00:00:00">2024-09-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/">資訊安全</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">總字數:</span><span class="word-count">1.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀時間:</span><span>5分鐘</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">瀏覽量:</span><span id="twikoo_visitors"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">評論數:</span><a href="/2024/09/07/Anti-Social-Engineer/#post-comment"><span id="twikoo-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;距離本文最後更新已經過了&quot;,&quot;messageNext&quot;:&quot;天，文中的操作步驟或工具版本可能已過時，請以官方文件為準。&quot;,&quot;postUpdate&quot;:&quot;2024-09-07 00:00:00&quot;}" hidden></div><p><img src="/images/Anti-Social-Engineer/social_engineer.png" alt="社交工程示意圖" loading='lazy'></p>
+<h2 id="當詐騙集團比-Netflix-還會拍劇"><a href="#當詐騙集團比-Netflix-還會拍劇" class="headerlink" title="當詐騙集團比 Netflix 還會拍劇"></a>當詐騙集團比 Netflix 還會拍劇</h2><p>最近新聞看多了，發現詐騙集團的演技已經超越演藝圈了。他們會<strong>深情款款</strong>地叫你「親愛的」，會<strong>聲淚俱下</strong>地說包裹出了問題，還會<strong>激動萬分</strong>地說有投資機會讓你日賺 5%。</p>
+<p>奧斯卡真的欠他們一座小金人 🏆</p>
+<p>你媽轉傳的那些「緊急通知」貼圖，搞不好就是詐騙集團的情書。今天我們要用<strong> 5 分鐘</strong>教你提升防詐技能，讓你不再當薯條！</p>
+<p><img src="/images/Anti-Social-Engineer/%E6%AC%A0%E7%82%B8.jpg" alt="詐騙集團真的欠炸" loading='lazy'></p>
+<hr>
+<h2 id="📊-現實很骨感：為什麼詐騙越來越難分辨？"><a href="#📊-現實很骨感：為什麼詐騙越來越難分辨？" class="headerlink" title="📊 現實很骨感：為什麼詐騙越來越難分辨？"></a>📊 現實很骨感：為什麼詐騙越來越難分辨？</h2><p>看看內政部警政署的<a target="_blank" rel="noopener" href="https://165.npa.gov.tw/#/article/1/1564">打詐儀表板</a>，這數字比我的存款還驚人（廢話，我存款是負的）：</p>
+<p><img src="/images/Anti-Social-Engineer/%E6%89%93%E8%A9%90%E5%84%80%E8%A1%A8%E6%9D%BF.png" alt="打詐儀表板數據" loading='lazy'></p>
+<p><strong>每天好幾億的財損</strong>！這比台灣生育率下降的速度還快 📉</p>
+<h3 id="詐騙為什麼越來越猖狂？"><a href="#詐騙為什麼越來越猖狂？" class="headerlink" title="詐騙為什麼越來越猖狂？"></a>詐騙為什麼越來越猖狂？</h3><ol>
+<li><strong>AI 合成技術</strong>：現在連你阿嬤的聲音都能模擬，比 Siri 還逼真</li>
+<li><strong>個資比菜單還詳細</strong>：你的資料在暗網流傳，比早餐店菜單還完整</li>
+<li><strong>人性弱點</strong>：我們都想要<strong>快速致富</strong>、<strong>怕錯失機會</strong>、<strong>怕被罵</strong></li>
+</ol>
+<hr>
+<h2 id="心態篇：被騙不是笨，而是人性"><a href="#心態篇：被騙不是笨，而是人性" class="headerlink" title="心態篇：被騙不是笨，而是人性"></a>心態篇：被騙不是笨，而是人性</h2><p>連<strong>金融專家</strong>、<strong>律師</strong>、<strong>醫生</strong>都有人差點中招，所以被騙真的不是笨，而是詐騙集團太會抓人性弱點。</p>
+<p>重點是：<strong>被騙了要勇敢報案</strong>！不要覺得丟臉，你的報案可能救了下一個人。</p>
+<hr>
+<h2 id="辨別網站真偽：技術篇"><a href="#辨別網站真偽：技術篇" class="headerlink" title="辨別網站真偽：技術篇"></a>辨別網站真偽：技術篇</h2><p>雖然大部分詐騙都在通訊軟體，但網站詐騙也要小心！作為資訊安全從業者，我必須告訴你：<strong>90% 的網路詐騙都是從假網站開始的</strong>。</p>
+<h2 id="網址結構解析：破解詐騙網站的第一課"><a href="#網址結構解析：破解詐騙網站的第一課" class="headerlink" title="網址結構解析：破解詐騙網站的第一課"></a>網址結構解析：破解詐騙網站的第一課</h2><h3 id="完整網址結構分析"><a href="#完整網址結構分析" class="headerlink" title="完整網址結構分析"></a>完整網址結構分析</h3><p>以 <code>https://www.walter.com.tw/images/data-lock-encryption-security.jpg</code> 為例：</p>
+<figure class="highlight text"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">https://www.walter.com.tw/images/data-lock-encryption-security.jpg</span><br><span class="line">└─┬─┘ └───────┬─────────┘ └─┬──┘ └─────────────┬────────────────┘</span><br><span class="line">  │           │             │                  │</span><br><span class="line">  │           │             │                  └── 檔案名稱</span><br><span class="line">  │           │             └── 路徑</span><br><span class="line">  │           └── 域名（最重要！）</span><br><span class="line">  └── 通訊協議</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li><strong>通訊協議</strong>：<code>https://</code>（有 SSL 憑證，但不代表不是詐騙）</li>
+<li><strong>域名</strong>：<code>www.walter.com.tw</code>（** 最重要！** 這是判斷真偽的關鍵）</li>
+<li><strong>路徑</strong>：<code>images</code></li>
+<li><strong>檔案名稱</strong>：<code>data-lock-encryption-security.jpg</code></li>
+</ul>
+<p><img src="/images/Anti-Social-Engineer/url.png" alt="網址結構示意圖" loading='lazy'></p>
+<h3 id="🔍-域名深度解析：詐騙集團最愛的陷阱"><a href="#🔍-域名深度解析：詐騙集團最愛的陷阱" class="headerlink" title="🔍 域名深度解析：詐騙集團最愛的陷阱"></a>🔍 域名深度解析：詐騙集團最愛的陷阱</h3><h4 id="域名的組成結構"><a href="#域名的組成結構" class="headerlink" title="域名的組成結構"></a>域名的組成結構</h4><figure class="highlight text"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">www.walter.com.tw</span><br><span class="line">└┬┘ └──┬──┘└┬┘└┬┘</span><br><span class="line"> │     │    │  └── 頂級域名 (TLD)</span><br><span class="line"> │     │    └── 二級域名</span><br><span class="line"> │     └── 三級域名/根域名</span><br><span class="line"> └── 子域名</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="詐騙集團常用的域名騙術"><a href="#詐騙集團常用的域名騙術" class="headerlink" title="詐騙集團常用的域名騙術"></a>詐騙集團常用的域名騙術</h4><ol>
+<li><p><strong>相似域名詐騙（Typosquatting）</strong></p>
+<ul>
+<li>正版：<code>facebook.com</code></li>
+<li>詐騙：<code>faceboook.com</code>（多一個 o）</li>
+<li>詐騙：<code>fecebook.com</code>（a 改成 e）</li>
+</ul>
+</li>
+<li><p><strong>子域名欺騙</strong></p>
+<ul>
+<li>正版：<code>paypal.com</code></li>
+<li>詐騙：<code>paypal.com.security-check.net</code></li>
+<li>看起來有 paypal.com，但真正的域名是 <code>security-check.net</code></li>
+</ul>
+</li>
+<li><p><strong>同形字攻擊（Homograph Attack）</strong></p>
+<ul>
+<li>正版：<code>apple.com</code></li>
+<li>詐騙：<code>аpple.com</code>（第一個字母是西里爾字母 а）</li>
+<li>肉眼幾乎看不出差別！</li>
+</ul>
+</li>
+<li><p><strong>假冒官方子域名</strong></p>
+<ul>
+<li>詐騙：<code>apple-support.verification-center.com</code></li>
+<li>看起來很官方，但域名主體是 <code>verification-center.com</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="🚨-判斷網站真偽的技術方法"><a href="#🚨-判斷網站真偽的技術方法" class="headerlink" title="🚨 判斷網站真偽的技術方法"></a>🚨 判斷網站真偽的技術方法</h2><h3 id="方法一：瀏覽器地址欄檢查"><a href="#方法一：瀏覽器地址欄檢查" class="headerlink" title="方法一：瀏覽器地址欄檢查"></a>方法一：瀏覽器地址欄檢查</h3><figure class="highlight text"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">✅ 正確：https://www.paypal.com/signin</span><br><span class="line">❌ 詐騙：https://paypal.signin.secure-payment.net</span><br><span class="line">❌ 詐騙：https://www.paypal-security.com</span><br><span class="line">❌ 詐騙：https://paypal.com.tw.verification.net</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="方法二：SSL-憑證檢查"><a href="#方法二：SSL-憑證檢查" class="headerlink" title="方法二：SSL 憑證檢查"></a>方法二：SSL 憑證檢查</h3><p>點擊地址欄的🔒圖示，查看憑證資訊：</p>
+<ul>
+<li>✅ 憑證主體應該與網站域名完全一致</li>
+<li>❌ 如果憑證是發給其他域名的，絕對是詐騙</li>
+</ul>
+<h3 id="方法三：WHOIS-查詢"><a href="#方法三：WHOIS-查詢" class="headerlink" title="方法三：WHOIS 查詢"></a>方法三：WHOIS 查詢</h3><p>使用工具查詢域名註冊資訊：</p>
+<ul>
+<li>註冊時間：正牌網站通常註冊很久了</li>
+<li>註冊商：知名公司通常用知名註冊商</li>
+<li>聯絡資訊：詐騙網站常用假資訊</li>
+</ul>
+<h2 id="🛡️-瀏覽器安全設定"><a href="#🛡️-瀏覽器安全設定" class="headerlink" title="🛡️ 瀏覽器安全設定"></a>🛡️ 瀏覽器安全設定</h2><h3 id="Chrome-安全設定"><a href="#Chrome-安全設定" class="headerlink" title="Chrome 安全設定"></a>Chrome 安全設定</h3><ol>
+<li>開啟「安全瀏覽」功能</li>
+<li>啟用「增強式保護」</li>
+<li>定期更新瀏覽器</li>
+</ol>
+<h3 id="Firefox-安全設定"><a href="#Firefox-安全設定" class="headerlink" title="Firefox 安全設定"></a>Firefox 安全設定</h3><ol>
+<li>開啟「詐騙和惡意軟體防護」</li>
+<li>啟用「DNS over HTTPS」</li>
+<li>使用嚴格的追蹤保護</li>
+</ol>
+<h3 id="小技巧：瀏覽器會隱藏-www"><a href="#小技巧：瀏覽器會隱藏-www" class="headerlink" title="小技巧：瀏覽器會隱藏 www"></a>小技巧：瀏覽器會隱藏 www</h3><p><img src="/images/Anti-Social-Engineer/urlwithouwww.png" alt="去除www的顯示" loading='lazy'></p>
+<p>有些瀏覽器會自動隱藏 <code>www</code> 前綴，這是正常的。</p>
+<h2 id="⚠️-常見網站詐騙手法"><a href="#⚠️-常見網站詐騙手法" class="headerlink" title="⚠️ 常見網站詐騙手法"></a>⚠️ 常見網站詐騙手法</h2><h3 id="1-釣魚網站"><a href="#1-釣魚網站" class="headerlink" title="1. 釣魚網站"></a>1. 釣魚網站</h3><ul>
+<li><strong>特徵</strong>：模仿知名網站外觀</li>
+<li><strong>目的</strong>：竊取帳號密碼</li>
+<li><strong>防範</strong>：直接輸入網址，不要點擊連結</li>
+</ul>
+<h3 id="2-假購物網站"><a href="#2-假購物網站" class="headerlink" title="2. 假購物網站"></a>2. 假購物網站</h3><ul>
+<li><strong>特徵</strong>：價格便宜到不合理</li>
+<li><strong>目的</strong>：騙取金錢和個資</li>
+<li><strong>防範</strong>：查看網站評價和聯絡資訊</li>
+</ul>
+<h3 id="3-假銀行網站"><a href="#3-假銀行網站" class="headerlink" title="3. 假銀行網站"></a>3. 假銀行網站</h3><ul>
+<li><strong>特徵</strong>：聲稱帳戶異常需要驗證</li>
+<li><strong>目的</strong>：竊取網銀帳密</li>
+<li><strong>防範</strong>：永遠從官方 APP 或書籤進入</li>
+</ul>
+<h3 id="4-惡意軟體下載網站"><a href="#4-惡意軟體下載網站" class="headerlink" title="4. 惡意軟體下載網站"></a>4. 惡意軟體下載網站</h3><ul>
+<li><strong>特徵</strong>：假冒軟體官網</li>
+<li><strong>目的</strong>：散布病毒木馬</li>
+<li><strong>防範</strong>：只從官方網站下載軟體</li>
+</ul>
+<h2 id="🔧-進階防護工具"><a href="#🔧-進階防護工具" class="headerlink" title="🔧 進階防護工具"></a>🔧 進階防護工具</h2><h3 id="瀏覽器擴充功能"><a href="#瀏覽器擴充功能" class="headerlink" title="瀏覽器擴充功能"></a>瀏覽器擴充功能</h3><ul>
+<li><strong>uBlock Origin</strong>：阻擋惡意網站</li>
+<li><strong>Malwarebytes Browser Guard</strong>：即時防護</li>
+<li><strong>Web of Trust (WOT)</strong>：網站信譽評分</li>
+</ul>
+<h3 id="網址檢查工具"><a href="#網址檢查工具" class="headerlink" title="網址檢查工具"></a>網址檢查工具</h3><ul>
+<li><strong>VirusTotal</strong>：多引擎網址掃描</li>
+<li><strong>URLVoid</strong>：檢查網站信譽</li>
+<li><strong>Google Safe Browsing</strong>：Google 的安全檢查</li>
+</ul>
+<h2 id="💡-資安專家的建議"><a href="#💡-資安專家的建議" class="headerlink" title="💡 資安專家的建議"></a>💡 資安專家的建議</h2><ol>
+<li><strong>書籤管理</strong>：重要網站加入書籤，避免手動輸入</li>
+<li><strong>雙重驗證</strong>：啟用 2FA，即使密碼外洩也能保護帳戶</li>
+<li><strong>定期檢查</strong>：定期檢查帳戶異常活動</li>
+<li><strong>更新習慣</strong>：保持軟體和作業系統最新版本</li>
+<li><strong>使用密碼管理器</strong>：生成並儲存強密碼，避免重複使用</li>
+<li><strong>設定 GOOGLE 暗網通知</strong>：當你的帳號出現在暗網時，Google 會通知你</li>
+</ol>
+<h2 id="🎯-實戰練習：辨別真假網站"><a href="#🎯-實戰練習：辨別真假網站" class="headerlink" title="🎯 實戰練習：辨別真假網站"></a>🎯 實戰練習：辨別真假網站</h2><p>看看你能不能分辨這些網址：</p>
+<figure class="highlight text"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. https://apple.com.security-update.net</span><br><span class="line">2. https://www.paypal.com/signin</span><br><span class="line">3. https://amazon-prime.checkout.com</span><br><span class="line">4. https://microsoft.com.tw</span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>答案</strong>：</p>
+<ul>
+<li>1️⃣ ❌ 詐騙（真正域名是 security-update.net）</li>
+<li>2️⃣ ✅ 正版</li>
+<li>3️⃣ ❌ 詐騙（真正域名是 checkout.com）</li>
+<li>4️⃣ ✅ 正版（microsoft 在台灣的官方域名）</li>
+</ul>
+<hr>
+<h2 id="🛠️-實用工具推薦"><a href="#🛠️-實用工具推薦" class="headerlink" title="🛠️ 實用工具推薦"></a>🛠️ 實用工具推薦</h2><ol>
+<li><strong>趨勢科技防詐達人</strong>：LINE 官方帳號，可以檢查網址和訊息 <a target="_blank" rel="noopener" href="https://www.trendmicro.com/zh_tw/forHome/products/tmc.html">https://www.trendmicro.com/zh_tw/forHome/products/tmc.html</a></li>
+<li><strong>165 全民防騙網</strong>：<a target="_blank" rel="noopener" href="https://165.npa.gov.tw/">https://165.npa.gov.tw/</a></li>
+<li><strong>詐騙撲滅計畫</strong>：<a target="_blank" rel="noopener" href="https://fraudbuster.digiat.org.tw/anti-fraud/index?listType=N">https://fraudbuster.digiat.org.tw/anti-fraud/index?listType=N</a></li>
+<li><strong>Google 監控暗網中的資料侵害事件</strong> : 讓 google 幫你監看你的帳號密碼是否被外洩在暗網 <a target="_blank" rel="noopener" href="https://myactivity.google.com/dark-web-report/dashboard">https://myactivity.google.com/dark-web-report/dashboard</a></li>
+<li><strong>whoscall</strong>：來電辨識 APP，可以查詢來電是否為詐騙電話 <a target="_blank" rel="noopener" href="https://whoscall.com/zh-hant">https://whoscall.com/zh-hant</a></li>
+</ol>
+<hr>
+<p><strong>如果這篇文章有幫到你，記得分享給親朋好友，一起對抗詐騙集團！</strong></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://blog.walter.com.tw/">Walter</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章連結: </span><span class="post-copyright-info"><a href="https://blog.walter.com.tw/2024/09/07/Anti-Social-Engineer/">https://blog.walter.com.tw/2024/09/07/Anti-Social-Engineer/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版權聲明: </span><span class="post-copyright-info">本部落格所有文章除特別聲明外，均採用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 授權協議。轉載請註明來源 <a href="https://blog.walter.com.tw" target="_blank">Walter's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/">資訊安全</a><a class="post-meta__tags" href="/tags/security/">security</a><a class="post-meta__tags" href="/tags/Social-Engineer/">Social Engineer</a><a class="post-meta__tags" href="/tags/%E9%98%B2%E8%A9%90%E9%A8%99/">防詐騙</a></div><div class="post-share"><div class="social-share" data-image="/images/Anti-Social-Engineer/social_engineer.png" data-sites="facebook,x"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>贊助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://p.ecpay.com.tw/1B2E170" target="_blank"><img class="post-qr-code-img" src="/images/ECPay.png" alt="綠界科技 ECPay"/ loading='lazy'></a><div class="post-qr-code-desc">綠界科技 ECPay</div></li><li class="reward-item"><a href="/images/BSC_BTC_ETH_USDT.jpg" target="_blank"><img class="post-qr-code-img" src="/images/BSC_BTC_ETH_USDT.jpg" alt="BSC Bitcoin"/ loading='lazy'></a><div class="post-qr-code-desc">BSC Bitcoin</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/08/23/Im-proud-that-I-store-my-password-in-plaintext/" title="我的密碼沒加密"><img class="cover" src="/images/Im-proud-that-I-store-my-password-in-plaintext/plainpass.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post" loading='lazy'><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">我的密碼沒加密</div></div><div class="info-2"><div class="info-item-1"> 為什麼要重新開啟這個話題最近在朋友的 Line 群組看到他分享忘記密碼的截圖，讓我想到資安前輩 Allen 的經典網站「我的密碼沒加密」，令人驚訝的是，2025 年了，我們居然還能發現有網站以明文方式儲存和傳送用戶密碼。 這就像是你去銀行開戶，行員把你的存摺密碼直接寫在存摺封面上一樣不可思議。 所以我決定重新啟動這個系列，希望能夠提醒大家注意這個不應該在現代還存在的資安問題。同時也希望透過這樣的分享，讓更多開發者重視密碼安全的重要性。 明文密碼為什麼這麼危險如果網站以明文方式儲存密碼，就像是把你家鑰匙掛在門外一樣，當管理員或者攻擊者取得時會帶來嚴重問題： 首先，攻擊者可以例如利用 SQL injection 之類的漏洞直接看到你的密碼，更可怕的是，很多人習慣在不同網站使用相同密碼。假設你在某個小型購物網站使用 WalterPa55w0rd! 這組看似安全的密碼（有大小寫、數字、符號，超過 12 碼），但你的網銀也使用同一組密碼，那麼一旦小網站被攻破，攻擊者就能用這組密碼嘗試登入你的銀行帳戶。這種攻擊手法稱為密碼填充攻擊，或者俗稱「撞庫攻擊」。 明文密碼與加密密碼的差別明文密碼就...</div></div></div></a><a class="pagination-related" href="/2024/05/02/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/" title="這才不算是入侵，因為你所有的密碼都一樣 - 宅男行不行 The Big Bang Theory S02E09, S09E09"><img class="cover" src="/images/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/3.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post" loading='lazy'><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">這才不算是入侵，因為你所有的密碼都一樣 - 宅男行不行 The Big Bang Theory S02E09, S09E09</div></div><div class="info-2"><div class="info-item-1">嗨，大家好，我是 ISDA 的 Walter，看電影 (劇) 學資安又來了，這次我們來看看幽默好笑又可以學習科學詞彙的 The Big Bang Theory (宅男行不行) 與最近的話題韓劇魷魚遊戲，看這些劇中有什麼關於資安的部分  The Big Bang Theory 劇照，圖片來源：https://paperbacks.pixnet.net/blog/post/167057184 影集介紹：宅男行不行故事是一群加州理工學院的宅男的生活，租住同一間公寓的實驗物理學家 Leonard 和理論物理學家 Sheldon 與他們朋友所發生的趣事 Sheldon 盜用 Leonard 的 Facebook 帳號在第二季第九集，Leonard 交到一個外科醫生女友時，Sheldon 很滿意 Leonard 這位女友，因為身為 Star Trek 粉絲在他幻想中的太空探險中有個醫官麥考伊是必要的，Sheldon 擔心以 Leonard 的交往經驗大概沒多久就會分手，因此自作主張盜用 Leonard 的 Facebook 帳號送出交往關係確認請求。在 Sheldon 被發現盜用帳號後嘴了一...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相關推薦</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2024/05/02/CyberSec-in-movie-Person-of-Interest-S04E11-IF-THEN-ELSE/" title="你是不是要玩死我呀 - 疑犯追蹤 Person of Interest S04E11 (IF-THEN-ELSE)"><img class="cover" src="/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/3.webp" alt="cover" loading='lazy'><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-05-02</div><div class="info-item-2">你是不是要玩死我呀 - 疑犯追蹤 Person of Interest S04E11 (IF-THEN-ELSE)</div></div><div class="info-2"><div class="info-item-1"> 疑犯追蹤劇照，圖片來源：primevideo.com 嗨，大家好，我是 ISDA 的 Walter，趁著最近有空把很久之前發現的美劇資安部分寫一下，因新冠肺炎 (COVID-19) 的疫情關係上半年協會活動較少，但之後應該會漸漸開設課程，再請大家多多關注，本人才疏學淺文章中如有錯誤之處還請不吝指教 疑犯追蹤這部影集疑犯追蹤 (Person of Interest) 是一部 2011 開始播放的美劇，由非常有名的諾蘭兄弟中的弟弟 Jonathan Nolan 的創作之一，故事是從電腦天才 Harold Finch 與身手不凡的前 CIA 探員 John Reese 開始，Harold 創造出超強的人工智慧 The Machine 與運用國家級的資源監看所有人預測兇案聯手好身手的 John 加以預防，故事到了後半段更有其他有趣的角色加入，也加入了許多資訊工作者會懂的有趣彩蛋，是值得細細品味的一部好劇，我自己大概也從頭到尾看了三次了 XD 以下有雷請注意 ======= 防雷分隔線 =======  要進入請小心的防雷圖。圖片來源：MMMMM_禾野男孩 ======= 防雷分隔線 =...</div></div></div></a><a class="pagination-related" href="/2024/05/01/CyberSec-in-movie-CSI-Cyber-S01E02/" title="IoT 世代，萬物皆可駭 - CSI Cyber S01E02"><img class="cover" src="/images/CyberSec-in-movie-CSI-Cyber-S01E02/8.webp" alt="cover" loading='lazy'><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-05-01</div><div class="info-item-2">IoT 世代，萬物皆可駭 - CSI Cyber S01E02</div></div><div class="info-2"><div class="info-item-1">[撰文 Walter/Eric] 前言：黑帽駭客與雲霄飛車命案於第二集開始，影集內都會介紹一個資訊安全相關的名詞，而此次的專有名詞是黑帽駭客 (Black hat hacker) 意指運用資訊相關技能惡意入侵或攻擊他人的設備，導致他人權益受損 反之如果是出於善意且不踰矩的通常就稱為是白帽駭客囉 希望大家都能夠成為功力高強的白帽駭客，而不是為非作歹的黑帽駭客唷!  此集的故事起源於駭客攻擊了遊樂場的雲霄飛車，使得乘客死亡或受傷  圖為攻擊者模擬的雲霄飛車以及攻擊用的 App雲霄飛車也能進行攻擊，似乎有點神奇～ 揪竟是怎麼回事呢? 發生事故之後確定煞車、軌道以及車體本身都正常，懷疑是系統被入侵，因此將此案件交由了 Cyber Team 首先就是將錄影畫面以及系統診斷的資訊調出以協助判斷案情… 此集讓我們關注的點有哪些呢 1. IoT 時代，什麼都能入侵，包含你的愛車Ryan 為了警告前黑帽的 Nelson，攻擊了他車子的警報器，而且只花五分鐘就攻擊成功了 並且使用可以控制汽車的 app 就可以控制 Nelson 的車子了，當然也許拍美劇需要一些戲劇效果， 但是現實生活中的確有發生可以...</div></div></div></a><a class="pagination-related" href="/2024/05/01/CyberSec-in-movie-CSI-Cyber-S01E01/" title="能力越強責任越大 - CSI Cyber S01E01"><img class="cover" src="/images/CyberSec-in-movie-CSI-Cyber-S01E01/2.webp" alt="cover" loading='lazy'><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-05-01</div><div class="info-item-2">能力越強責任越大 - CSI Cyber S01E01</div></div><div class="info-2"><div class="info-item-1">[撰文 Walter/ Eric] 哈囉大家好～ 我是瓦特，一忙就富奸了好久，拖到自己都不好意思了 XD 希望對影集或電影有興趣的朋友歡迎到 ISDA 的粉絲團按讚留言唷～ 讓我們知道你也喜歡這系列文，我們會更努力的寫出更優質的文章 也感謝共同作者 Eric 大大幫忙，希望大家會喜歡 &gt;”&lt;  作者外出取材 (? 關於影集與登場角色接著與大家分享的影集是非常有名的 CSI，但是主題不是一般的犯罪對象，而是與這個 Blog 最為接近的主題 Cyber Crime (網路犯罪)，內容也與生活都息息相關，是學習資安的好選擇唷～  左至右為 前黑帽駭客 (Black-Hat Hacker) 後來招募為 FBI 探員的 Brody Nelson、號稱最強的白帽駭客 (White-Hat Hacker)Daniel Krumitz、愛玩 3C 玩具的 Diebenkorn “D.B.” Russell、心理專家兼網路犯罪專家 Avery Ryan、身手矯健的打手 Elijah Mundo、一樣為前黑帽後來招募為探員的 Raven Ramirez 此集從嬰兒於父母睡夢中被小偷偷走開...</div></div></div></a><a class="pagination-related" href="/2024/04/30/noob-to-OSCP/" title="從菜雞到 OSCP"><img class="cover" src="/images/noob-to-OSCP/offsec_price_20240430.png" alt="cover" loading='lazy'><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-30</div><div class="info-item-2">從菜雞到 OSCP</div></div><div class="info-2"><div class="info-item-1">滿幸運的，一次就考到 OSCP，在此感謝許多在考照過程幫助過我的人。 OSCP 簡介Offensive Security Certified Professional(OSCP) 是一張由 Offensive Security 發出的實作型的資安證照，目前課程名稱為 PEN-200 (或稱為 Penetration Testing with Kali Linux, PWK) 有別於常聽到的 CEH 選擇題考試 (CEH Practical 為實作)，OSCP 全程以實作的方式進行測驗，並於實機測試後撰寫報告後繳交方能取得證照，普遍認為 OSCP 的能力鑑別度是優於 CEH 的，雖然目前在台灣可能知名度還不太夠，但以滲透測試從業人員裡面還是相當知名的。 Offensive Security Certified Professional (OSCP) PEN-200 (也就是 OSCP 的課程) 價格最低 $1649，雖然也不便宜，但考取之後不需要每年的維護費用，整體來說還是比 EC-Council 還划算，一年份的 Lab 需要 $2599 (換算台幣約 8 萬多)，外加兩次的測驗...</div></div></div></a><a class="pagination-related" href="/2024/05/01/CyberSec-in-movie-Macgyver-S01E02/" title="你的 WiFi 就是我的 WiFi - 新百戰天龍 MacGyver 第一季 第二集 S01E02"><img class="cover" src="/images/CyberSec-in-movie-Macgyver-S01E02/3.webp" alt="cover" loading='lazy'><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-05-01</div><div class="info-item-2">你的 WiFi 就是我的 WiFi - 新百戰天龍 MacGyver 第一季 第二集 S01E02</div></div><div class="info-2"><div class="info-item-1">各位忠實粉絲久等了，第二篇看電影學資安來囉～ (哪來的粉絲?)，這次要討論的一樣是讓某些人覺得相見不如懷念的馬蓋先，不過我還是認為此片沒大家說得那麼差啦 XD 因為意外的被同事發現我在這邊寫廢文，只好認真的多寫一點技術了 Orz Riley 是怎麼駭進秘密設施的？為了減少劇透，我們直接快轉到我們女駭客 Riley 發揮的地方，馬蓋先與夥伴們要進入某秘密設施救人  功力高強的 Riley 馬上就駭入該設施的網路並且獲得監視器的權限，可是她是怎麼入侵的呢？  靠無線訊號找目標，天線跟劉德華借的？從無線網路訊號來判斷是否是目標的確是種方法，不過我怎麼看旁邊都只有一個建築物呀~~~  難道你是跟劉德華借超大天線嗎？ (知道這梗的可能都有年紀了 XD)  常見的無線網路攻擊手法找到目標之後要怎麼對目標的無線網路進行攻擊呢？ 以目前我所知比較常見的攻擊方式可以從以下的步驟來進行： WEP 與 WPA/WPA2 的加密弱點可以先查看加密模式是否使用 WEP (Wired Equivalent Privacy)，如果確認是 WEP 可以利用該加密模式的弱點：因 WEP 使用 RC4 (Rives...</div></div></div></a><a class="pagination-related" href="/2024/05/02/CyberSec-in-movie-CSI-Cyber-S02E01/" title="開車順路經過就入侵你家 - CSI Cyber S02E01"><img class="cover" src="/images/CyberSec-in-movie-CSI-Cyber-S02E01/13.webp" alt="cover" loading='lazy'><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-05-02</div><div class="info-item-2">開車順路經過就入侵你家 - CSI Cyber S02E01</div></div><div class="info-2"><div class="info-item-1">前言：失竊案揭開的 WarDriving 疑雲Hi 各位朋友有安全躲過這次 WannaCry 勒索病毒嗎，記得趕緊把該補的 Patch 補一補吧，以免被打的嫑嫑的～下一波 Shadow Brokers 攻擊可能就快來拉～ 此集故事起源為某家庭的管家報失竊案，而且主人也聯絡不到，FBI 發覺案情並不單純  此集的主題為 WarDriving，開車就可以入侵？讓我們繼續往下看~  1. 小孩子的娃娃也可以被入侵故事一開始的畫面就是從小女孩與智慧型娃娃的對話開始，就暗示了智慧型娃娃被入侵，後面的劇情也說明了的確被駭客所利用，雖然這是電影情節，但實際生活也發生了這樣的智慧娃娃資安漏洞出現，攻擊者可以藉由有漏洞的藍芽裝置入侵娃娃來進行監聽，因此生活中任何可以連接網路的設備都要非常的小心，尤其是可以接收聲音或影像的設備，更是可以獲得很多使用者資訊的重要一環，因此購買相關設備都要注意是否有資安問題。  2. 遊戲機與掃地機器人的數位鑑識掃地機器人的碰撞紀錄劇中 FBI 鑑識專家 D.B. Russell 為追查證據，非常細心地發現房子內某塊地板特別多灰塵，後來又發現了有記憶功能的掃地機器人，便...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 評論</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/images/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/ loading='lazy'></div><div class="author-info-name">Walter</div><div class="author-info-description">適合新手的資訊安全教學</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/ewater77"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/ewater77" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:walter@walter.com.tw" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">如有任何問題歡迎 E-Mail 給我 walter@walter.com.tw</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%95%B6%E8%A9%90%E9%A8%99%E9%9B%86%E5%9C%98%E6%AF%94-Netflix-%E9%82%84%E6%9C%83%E6%8B%8D%E5%8A%87"><span class="toc-number">1.</span> <span class="toc-text">當詐騙集團比 Netflix 還會拍劇</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%8A-%E7%8F%BE%E5%AF%A6%E5%BE%88%E9%AA%A8%E6%84%9F%EF%BC%9A%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A9%90%E9%A8%99%E8%B6%8A%E4%BE%86%E8%B6%8A%E9%9B%A3%E5%88%86%E8%BE%A8%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">📊 現實很骨感：為什麼詐騙越來越難分辨？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A9%90%E9%A8%99%E7%82%BA%E4%BB%80%E9%BA%BC%E8%B6%8A%E4%BE%86%E8%B6%8A%E7%8C%96%E7%8B%82%EF%BC%9F"><span class="toc-number">2.1.</span> <span class="toc-text">詐騙為什麼越來越猖狂？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%83%E6%85%8B%E7%AF%87%EF%BC%9A%E8%A2%AB%E9%A8%99%E4%B8%8D%E6%98%AF%E7%AC%A8%EF%BC%8C%E8%80%8C%E6%98%AF%E4%BA%BA%E6%80%A7"><span class="toc-number">3.</span> <span class="toc-text">心態篇：被騙不是笨，而是人性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%A8%E5%88%A5%E7%B6%B2%E7%AB%99%E7%9C%9F%E5%81%BD%EF%BC%9A%E6%8A%80%E8%A1%93%E7%AF%87"><span class="toc-number">4.</span> <span class="toc-text">辨別網站真偽：技術篇</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B6%B2%E5%9D%80%E7%B5%90%E6%A7%8B%E8%A7%A3%E6%9E%90%EF%BC%9A%E7%A0%B4%E8%A7%A3%E8%A9%90%E9%A8%99%E7%B6%B2%E7%AB%99%E7%9A%84%E7%AC%AC%E4%B8%80%E8%AA%B2"><span class="toc-number">5.</span> <span class="toc-text">網址結構解析：破解詐騙網站的第一課</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8C%E6%95%B4%E7%B6%B2%E5%9D%80%E7%B5%90%E6%A7%8B%E5%88%86%E6%9E%90"><span class="toc-number">5.1.</span> <span class="toc-text">完整網址結構分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%94%8D-%E5%9F%9F%E5%90%8D%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90%EF%BC%9A%E8%A9%90%E9%A8%99%E9%9B%86%E5%9C%98%E6%9C%80%E6%84%9B%E7%9A%84%E9%99%B7%E9%98%B1"><span class="toc-number">5.2.</span> <span class="toc-text">🔍 域名深度解析：詐騙集團最愛的陷阱</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%9F%E5%90%8D%E7%9A%84%E7%B5%84%E6%88%90%E7%B5%90%E6%A7%8B"><span class="toc-number">5.2.1.</span> <span class="toc-text">域名的組成結構</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A9%90%E9%A8%99%E9%9B%86%E5%9C%98%E5%B8%B8%E7%94%A8%E7%9A%84%E5%9F%9F%E5%90%8D%E9%A8%99%E8%A1%93"><span class="toc-number">5.2.2.</span> <span class="toc-text">詐騙集團常用的域名騙術</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9A%A8-%E5%88%A4%E6%96%B7%E7%B6%B2%E7%AB%99%E7%9C%9F%E5%81%BD%E7%9A%84%E6%8A%80%E8%A1%93%E6%96%B9%E6%B3%95"><span class="toc-number">6.</span> <span class="toc-text">🚨 判斷網站真偽的技術方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A%E7%80%8F%E8%A6%BD%E5%99%A8%E5%9C%B0%E5%9D%80%E6%AC%84%E6%AA%A2%E6%9F%A5"><span class="toc-number">6.1.</span> <span class="toc-text">方法一：瀏覽器地址欄檢查</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9ASSL-%E6%86%91%E8%AD%89%E6%AA%A2%E6%9F%A5"><span class="toc-number">6.2.</span> <span class="toc-text">方法二：SSL 憑證檢查</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%89%EF%BC%9AWHOIS-%E6%9F%A5%E8%A9%A2"><span class="toc-number">6.3.</span> <span class="toc-text">方法三：WHOIS 查詢</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9B%A1%EF%B8%8F-%E7%80%8F%E8%A6%BD%E5%99%A8%E5%AE%89%E5%85%A8%E8%A8%AD%E5%AE%9A"><span class="toc-number">7.</span> <span class="toc-text">🛡️ 瀏覽器安全設定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Chrome-%E5%AE%89%E5%85%A8%E8%A8%AD%E5%AE%9A"><span class="toc-number">7.1.</span> <span class="toc-text">Chrome 安全設定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Firefox-%E5%AE%89%E5%85%A8%E8%A8%AD%E5%AE%9A"><span class="toc-number">7.2.</span> <span class="toc-text">Firefox 安全設定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E6%8A%80%E5%B7%A7%EF%BC%9A%E7%80%8F%E8%A6%BD%E5%99%A8%E6%9C%83%E9%9A%B1%E8%97%8F-www"><span class="toc-number">7.3.</span> <span class="toc-text">小技巧：瀏覽器會隱藏 www</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9A%A0%EF%B8%8F-%E5%B8%B8%E8%A6%8B%E7%B6%B2%E7%AB%99%E8%A9%90%E9%A8%99%E6%89%8B%E6%B3%95"><span class="toc-number">8.</span> <span class="toc-text">⚠️ 常見網站詐騙手法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%87%A3%E9%AD%9A%E7%B6%B2%E7%AB%99"><span class="toc-number">8.1.</span> <span class="toc-text">1. 釣魚網站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%81%87%E8%B3%BC%E7%89%A9%E7%B6%B2%E7%AB%99"><span class="toc-number">8.2.</span> <span class="toc-text">2. 假購物網站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%81%87%E9%8A%80%E8%A1%8C%E7%B6%B2%E7%AB%99"><span class="toc-number">8.3.</span> <span class="toc-text">3. 假銀行網站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%83%A1%E6%84%8F%E8%BB%9F%E9%AB%94%E4%B8%8B%E8%BC%89%E7%B6%B2%E7%AB%99"><span class="toc-number">8.4.</span> <span class="toc-text">4. 惡意軟體下載網站</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%A7-%E9%80%B2%E9%9A%8E%E9%98%B2%E8%AD%B7%E5%B7%A5%E5%85%B7"><span class="toc-number">9.</span> <span class="toc-text">🔧 進階防護工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%80%8F%E8%A6%BD%E5%99%A8%E6%93%B4%E5%85%85%E5%8A%9F%E8%83%BD"><span class="toc-number">9.1.</span> <span class="toc-text">瀏覽器擴充功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B6%B2%E5%9D%80%E6%AA%A2%E6%9F%A5%E5%B7%A5%E5%85%B7"><span class="toc-number">9.2.</span> <span class="toc-text">網址檢查工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%92%A1-%E8%B3%87%E5%AE%89%E5%B0%88%E5%AE%B6%E7%9A%84%E5%BB%BA%E8%AD%B0"><span class="toc-number">10.</span> <span class="toc-text">💡 資安專家的建議</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%8E%AF-%E5%AF%A6%E6%88%B0%E7%B7%B4%E7%BF%92%EF%BC%9A%E8%BE%A8%E5%88%A5%E7%9C%9F%E5%81%87%E7%B6%B2%E7%AB%99"><span class="toc-number">11.</span> <span class="toc-text">🎯 實戰練習：辨別真假網站</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9B%A0%EF%B8%8F-%E5%AF%A6%E7%94%A8%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%96%A6"><span class="toc-number">12.</span> <span class="toc-text">🛠️ 實用工具推薦</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/07/27/git-leak/" title=".git 目錄外洩自我檢測、修補與通報指南"><img src="/images/git-leak/2026-07-Cover-ChatGPT.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt=".git 目錄外洩自我檢測、修補與通報指南"/ loading='lazy'></a><div class="content"><a class="title" href="/2026/07/27/git-leak/" title=".git 目錄外洩自我檢測、修補與通報指南">.git 目錄外洩自我檢測、修補與通報指南</a><time datetime="2026-07-26T16:00:00.000Z" title="發表於 2026-07-27 00:00:00">2026-07-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/08/23/Im-proud-that-I-store-my-password-in-plaintext/" title="我的密碼沒加密"><img src="/images/Im-proud-that-I-store-my-password-in-plaintext/plainpass.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="我的密碼沒加密"/ loading='lazy'></a><div class="content"><a class="title" href="/2025/08/23/Im-proud-that-I-store-my-password-in-plaintext/" title="我的密碼沒加密">我的密碼沒加密</a><time datetime="2025-08-22T20:18:29.000Z" title="發表於 2025-08-23 04:18:29">2025-08-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/07/Anti-Social-Engineer/" title="防詐騙入門：社交工程與假網站辨識"><img src="/images/Anti-Social-Engineer/social_engineer.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="防詐騙入門：社交工程與假網站辨識"/ loading='lazy'></a><div class="content"><a class="title" href="/2024/09/07/Anti-Social-Engineer/" title="防詐騙入門：社交工程與假網站辨識">防詐騙入門：社交工程與假網站辨識</a><time datetime="2024-09-06T16:00:00.000Z" title="發表於 2024-09-07 00:00:00">2024-09-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/05/02/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/" title="這才不算是入侵，因為你所有的密碼都一樣 - 宅男行不行 The Big Bang Theory S02E09, S09E09"><img src="/images/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/3.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="這才不算是入侵，因為你所有的密碼都一樣 - 宅男行不行 The Big Bang Theory S02E09, S09E09"/ loading='lazy'></a><div class="content"><a class="title" href="/2024/05/02/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/" title="這才不算是入侵，因為你所有的密碼都一樣 - 宅男行不行 The Big Bang Theory S02E09, S09E09">這才不算是入侵，因為你所有的密碼都一樣 - 宅男行不行 The Big Bang Theory S02E09, S09E09</a><time datetime="2024-05-01T17:26:21.000Z" title="發表於 2024-05-02 01:26:21">2024-05-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/05/02/CyberSec-in-movie-Person-of-Interest-S04E11-IF-THEN-ELSE/" title="你是不是要玩死我呀 - 疑犯追蹤 Person of Interest S04E11 (IF-THEN-ELSE)"><img src="/images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/3.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="你是不是要玩死我呀 - 疑犯追蹤 Person of Interest S04E11 (IF-THEN-ELSE)"/ loading='lazy'></a><div class="content"><a class="title" href="/2024/05/02/CyberSec-in-movie-Person-of-Interest-S04E11-IF-THEN-ELSE/" title="你是不是要玩死我呀 - 疑犯追蹤 Person of Interest S04E11 (IF-THEN-ELSE)">你是不是要玩死我呀 - 疑犯追蹤 Person of Interest S04E11 (IF-THEN-ELSE)</a><time datetime="2024-05-01T16:56:04.000Z" title="發表於 2024-05-02 00:56:04">2024-05-02</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2024 - 2026 By Walter</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主題 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日夜模式切換"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往評論"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到頂端"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.6.1"></script><script src="/js/main.js?v=5.6.1"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.14/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><div class="js-pjax"><script>(() => {
+  const parseViewBox = viewBox => {
+    if (!viewBox) return null
+    const parts = viewBox.trim().split(/[\s,]+/).map(n => Number(n))
+    if (parts.length !== 4 || parts.some(n => Number.isNaN(n))) return null
+    return parts
+  }
+
+  const getSvgViewBox = svg => {
+    const attr = parseViewBox(svg.getAttribute('viewBox'))
+    if (attr) return attr
+
+    // Fallback: use bbox to build a viewBox
+    try {
+      const bbox = svg.getBBox()
+      if (bbox && bbox.width && bbox.height) return [bbox.x, bbox.y, bbox.width, bbox.height]
+    } catch (e) {
+      // getBBox may fail on some edge cases; ignore
+    }
+
+    const w = Number(svg.getAttribute('width')) || 0
+    const h = Number(svg.getAttribute('height')) || 0
+    if (w > 0 && h > 0) return [0, 0, w, h]
+    return [0, 0, 100, 100]
+  }
+
+  const setSvgViewBox = (svg, vb) => {
+    svg.setAttribute('viewBox', `${vb[0]} ${vb[1]} ${vb[2]} ${vb[3]}`)
+  }
+
+  const clamp = (v, min, max) => Math.max(min, Math.min(max, v))
+
+  const openSvgInNewTab = ({ source, initViewBox }) => {
+    const getClonedSvg = () => {
+      if (typeof source === 'string') {
+        const template = document.createElement('template')
+        template.innerHTML = source.trim()
+        const svg = template.content.querySelector('svg')
+        return svg ? svg.cloneNode(true) : null
+      }
+      if (source && typeof source.cloneNode === 'function') {
+        return source.cloneNode(true)
+      }
+      return null
+    }
+
+    const clone = getClonedSvg()
+    if (!clone) return
+    if (initViewBox && initViewBox.length === 4) {
+      clone.setAttribute('viewBox', initViewBox.join(' '))
+    }
+    if (!clone.getAttribute('xmlns')) clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg')
+    if (!clone.getAttribute('xmlns:xlink') && clone.innerHTML.includes('xlink:')) {
+      clone.setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink')
+    }
+    // inject background to match current theme
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark'
+    const bg = getComputedStyle(document.body).backgroundColor || (isDark ? '#1e1e1e' : '#ffffff')
+    if (!clone.style.background) clone.style.background = bg
+
+    const serializer = new XMLSerializer()
+    const svgSource = serializer.serializeToString(clone)
+    const htmlSource = `<!doctype html><html><head><meta charset="utf-8" />
+      <style>
+        html, body { width: 100%; height: 100%; margin: 0; display: flex; align-items: center; justify-content: center; background: ${bg}; }
+        svg { max-width: 100%; max-height: 100%; height: auto; width: auto; }
+      </style>
+      </head><body>${svgSource}</body></html>`
+    const blob = new Blob([htmlSource], { type: 'text/html;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    window.open(url, '_blank', 'noopener')
+
+    setTimeout(() => URL.revokeObjectURL(url), 5000)
+  }
+
+  const attachMermaidViewerButton = wrap => {
+    let btn = wrap.querySelector('.mermaid-open-btn')
+    if (!btn) {
+      btn = document.createElement('button')
+      btn.type = 'button'
+      btn.className = 'mermaid-open-btn'
+      wrap.appendChild(btn)
+    }
+
+    btn.innerHTML = '<i class="fa fa-search fa-fw" aria-hidden="true"></i>'
+
+    if (!btn.__mermaidViewerBound) {
+      btn.addEventListener('click', e => {
+        e.preventDefault()
+        e.stopPropagation()
+        const svg = wrap.__mermaidOriginalSvg || wrap.querySelector('svg')
+        if (!svg) return
+        const initViewBox = wrap.__mermaidInitViewBox
+        openSvgInNewTab({ source: svg, initViewBox })
+      })
+      btn.__mermaidViewerBound = true
+    }
+  }
+
+  // Zoom around a point (px, py) in the SVG viewport (in viewBox coordinates)
+  const zoomAtPoint = (vb, factor, px, py) => {
+    const w = vb[2] * factor
+    const h = vb[3] * factor
+    const nx = px - (px - vb[0]) * factor
+    const ny = py - (py - vb[1]) * factor
+    return [nx, ny, w, h]
+  }
+
+  const initMermaidGestures = wrap => {
+    // Clean up previous event listeners and pending frames
+    if (wrap.__mermaidAbortController) {
+      wrap.__mermaidAbortController.abort()
+      if (wrap.__mermaidRafId) cancelAnimationFrame(wrap.__mermaidRafId)
+    }
+    const ac = new AbortController()
+    wrap.__mermaidAbortController = ac
+    const svg = wrap.querySelector('svg')
+    if (!svg) return
+
+    // Ensure viewBox exists so gestures always work
+    const initVb = getSvgViewBox(svg)
+    wrap.__mermaidInitViewBox = initVb
+    wrap.__mermaidCurViewBox = initVb.slice()
+    setSvgViewBox(svg, initVb)
+    // Disable default gestures to prevent scroll chaining and pinch-zoom penetration in Chrome
+    svg.style.touchAction = 'none'
+
+    // Cache BoundingClientRect, throttled on scroll to reduce reflow
+    let cachedRect = svg.getBoundingClientRect()
+    let rectDirty = false
+    const markRectDirty = () => { rectDirty = true }
+    window.addEventListener('resize', markRectDirty, { signal: ac.signal })
+    window.addEventListener('scroll', markRectDirty, { signal: ac.signal, capture: true })
+    const getRect = () => {
+      if (rectDirty) {
+        cachedRect = svg.getBoundingClientRect()
+        rectDirty = false
+      }
+      return cachedRect
+    }
+
+    // Precompute clamp bounds from initial viewBox
+    const minW = initVb[2] * 0.1
+    const maxW = initVb[2] * 10
+    const minH = initVb[3] * 0.1
+    const maxH = initVb[3] * 10
+    const clampVb = vb => {
+      const out = vb.slice()
+      out[2] = clamp(out[2], minW, maxW)
+      out[3] = clamp(out[3], minH, maxH)
+      return out
+    }
+
+    // Throttle DOM updates using requestAnimationFrame
+    let pendingVb = null
+    let rafId = null
+    const applyVb = () => {
+      if (pendingVb) {
+        wrap.__mermaidCurViewBox = pendingVb
+        setSvgViewBox(svg, pendingVb)
+        pendingVb = null
+      }
+      rafId = null
+      wrap.__mermaidRafId = null
+    }
+    const setCurVb = vb => {
+      pendingVb = clampVb(vb)
+      if (!rafId) {
+        rafId = requestAnimationFrame(applyVb)
+        wrap.__mermaidRafId = rafId
+      }
+    }
+
+    const state = {
+      pointers: new Map(),
+      startVb: null,
+      startDist: 0,
+      lastPointerX: 0,
+      lastPointerY: 0
+    }
+
+    const onPointerDown = e => {
+      if (e.pointerType === 'mouse' && e.button !== 0) return
+      svg.setPointerCapture(e.pointerId)
+      const curVb = wrap.__mermaidCurViewBox
+      state.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+      if (state.pointers.size === 1) {
+        state.startVb = curVb.slice()
+        state.lastPointerX = e.clientX
+        state.lastPointerY = e.clientY
+      } else if (state.pointers.size === 2) {
+        const pts = [...state.pointers.values()]
+        const dx = pts[0].x - pts[1].x
+        const dy = pts[0].y - pts[1].y
+        state.startDist = Math.hypot(dx, dy)
+        state.startVb = curVb.slice()
+      }
+    }
+
+    const onPointerMove = e => {
+      if (!state.pointers.has(e.pointerId)) return
+      state.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+      const curVb = wrap.__mermaidCurViewBox
+      const rect = getRect()
+      if (state.pointers.size === 1 && state.startVb) {
+        const p = state.pointers.values().next().value
+        const dxClient = p.x - state.lastPointerX
+        const dyClient = p.y - state.lastPointerY
+        state.lastPointerX = p.x
+        state.lastPointerY = p.y
+        const dx = dxClient * (curVb[2] / rect.width)
+        const dy = dyClient * (curVb[3] / rect.height)
+        setCurVb([curVb[0] - dx, curVb[1] - dy, curVb[2], curVb[3]])
+        return
+      }
+      if (state.pointers.size === 2 && state.startVb && state.startDist > 0) {
+        const pts = [...state.pointers.values()]
+        const dx = pts[0].x - pts[1].x
+        const dy = pts[0].y - pts[1].y
+        const dist = Math.hypot(dx, dy)
+        if (!dist) return
+        const factor = state.startDist / dist
+        const cx = (pts[0].x + pts[1].x) / 2
+        const cy = (pts[0].y + pts[1].y) / 2
+        const px = curVb[0] + (cx - rect.left) * (curVb[2] / rect.width)
+        const py = curVb[1] + (cy - rect.top) * (curVb[3] / rect.height)
+        setCurVb(zoomAtPoint(state.startVb, factor, px, py))
+      }
+    }
+
+    const onPointerUpOrCancel = e => {
+      // Release PointerCapture to avoid event capture anomalies
+      if (svg.hasPointerCapture && svg.hasPointerCapture(e.pointerId)) {
+        svg.releasePointerCapture(e.pointerId)
+      }
+      state.pointers.delete(e.pointerId)
+      if (state.pointers.size === 0) {
+        state.startVb = null
+        state.startDist = 0
+      } else if (state.pointers.size === 1) {
+        const p = state.pointers.values().next().value
+        state.lastPointerX = p.x
+        state.lastPointerY = p.y
+      }
+    }
+
+    const onWheel = e => {
+      // Prevent event bubbling from triggering external scroll
+      e.preventDefault()
+      e.stopPropagation()
+      // Normalize deltaY across deltaMode (Chrome uses pixels, Safari uses lines)
+      let delta = e.deltaY
+      if (e.deltaMode === 1) delta *= 16
+      else if (e.deltaMode === 2) delta *= 400
+
+      // Continuous zoom factor: smoother than fixed 1.1/0.9 steps
+      const zoomFactor = Math.pow(1.001, delta)
+
+      const curVb = wrap.__mermaidCurViewBox
+      const rect = getRect()
+      const px = curVb[0] + (e.clientX - rect.left) * (curVb[2] / rect.width)
+      const py = curVb[1] + (e.clientY - rect.top) * (curVb[3] / rect.height)
+      setCurVb(zoomAtPoint(curVb, zoomFactor, px, py))
+    }
+
+    const onDblClick = () => {
+      const init = wrap.__mermaidInitViewBox
+      if (init) setCurVb(init)
+    }
+
+    svg.addEventListener('pointerdown', onPointerDown, { signal: ac.signal })
+    svg.addEventListener('pointermove', onPointerMove, { signal: ac.signal })
+    svg.addEventListener('pointerup', onPointerUpOrCancel, { signal: ac.signal })
+    svg.addEventListener('pointercancel', onPointerUpOrCancel, { signal: ac.signal })
+    svg.addEventListener('wheel', onWheel, { passive: false, signal: ac.signal })
+    svg.addEventListener('dblclick', onDblClick, { signal: ac.signal })
+  }
+
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      // Clean up event listeners before removing old SVG
+      if (item.__mermaidAbortController) {
+        item.__mermaidAbortController.abort()
+      }
+      const oldSvg = item.querySelector('svg')
+      if (oldSvg) oldSvg.remove()
+      let config = {}
+      try {
+        config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      } catch (e) {
+        console.warn('[mermaid] failed to parse dataset.config:', e)
+      }
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+        if (true) initMermaidGestures(item)
+        item.__mermaidOriginalSvg = svg
+        if (true) attachMermaidViewerButton(item)
+      }
+
+      const handleError = err => {
+        console.error(`[mermaid] render failed for block #${index}:`, err)
+        const errorEl = document.createElement('div')
+        errorEl.className = 'mermaid-error'
+        errorEl.textContent = `Mermaid render error: ${err.message || err}`
+        mermaidSrc.insertAdjacentElement('afterend', errorEl)
+      }
+
+      try {
+        const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+        // mermaid v9 and v10 compatibility
+        if (typeof renderFn === 'string') {
+          renderMermaid(renderFn)
+        } else {
+          renderFn.then(({ svg }) => renderMermaid(svg)).catch(handleError)
+        }
+      } catch (err) {
+        handleError(err)
+      }
+    })
+  }
+
+  const codeToMermaid = $article => {
+    const codeMermaidEle = $article.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    const $article = document.getElementById('article-container')
+    if (!$article) return
+
+    if (true) codeToMermaid($article)
+    const $mermaid = $article.querySelectorAll('.mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.16.0/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://blogwaltercomtw-twikoo.vercel.app',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = (el = document, path = location.pathname) => {
+    twikoo.init({
+      el: el.querySelector('#twikoo-wrap'),
+      envId: 'https://blogwaltercomtw-twikoo.vercel.app',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      },
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    GLOBAL_CONFIG_SITE.pageType === 'post' && getCount()
+
+    isShuoshuo && (window.shuoshuoComment.destroyTwikoo = () => {
+      if (el.children.length) {
+        el.innerHTML = ''
+        el.classList.add('no-comment')
+      }
+    })
+  }
+
+  const loadTwikoo = (el, path) => {
+    if (typeof twikoo === 'object') setTimeout(() => init(el, path), 0)
+    else btf.getScript('https://cdn.jsdelivr.net/npm/twikoo@1.7.15/dist/twikoo.all.min.js').then(() => init(el, path))
+  }
+
+  if (isShuoshuo) {
+    'Twikoo' === 'Twikoo'
+      ? window.shuoshuoComment = { loadComment: loadTwikoo }
+      : window.loadOtherComment = loadTwikoo
+    return
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜尋</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  資料載入中</span></div><div class="local-search-input"><input placeholder="搜尋文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.6.1"></script></div></div></body></html>
