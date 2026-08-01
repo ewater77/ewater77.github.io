@@ -7,6 +7,7 @@ tags:
     - 看電影學資安
     - drama
     - Macgyver
+description: "看電影學資安系列第一篇：從新版馬蓋先 MacGyver S01E01 認識邏輯炸彈、硬碟鑑識與逆向工程，以及號稱世界上最可怕的搜尋引擎 Shodan。"
 categories:
     - 看電影學資安
 cover: /images/CyberSec-in-movie-Macgyver-S01E01/2.webp

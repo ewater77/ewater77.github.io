@@ -7,6 +7,7 @@ tags:
     - 看電影學資安
     - drama
     - CSI Cyber
+description: "看電影學資安：CSI Cyber 第一季第二集駭客攻擊雲霄飛車釀成死傷，從劇情看 IoT 時代的資安威脅，連汽車警報器都能被入侵的真實案例。"
 categories:
     - 看電影學資安
 cover: /images/CyberSec-in-movie-CSI-Cyber-S01E02/8.webp

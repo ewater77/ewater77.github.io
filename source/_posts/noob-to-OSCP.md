@@ -7,6 +7,7 @@ tags:
     - OSCP
     - 證照
     - Offsec
+description: "菜雞一次考取 OSCP 的心得分享：課程與費用介紹、考試流程與報告撰寫注意事項，以及從 Vulnhub、HackTheBox 到 Lab 的完整準備路線建議。"
 categories:
     - 資訊安全
 cover: /images/noob-to-OSCP/offsec_price_20240430.png

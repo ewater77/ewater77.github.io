@@ -7,6 +7,7 @@ tags:
     - 看電影學資安
     - drama
     - Person of Interest
+description: "看電影學資安：疑犯追蹤 S04E11 劇中出現的 Shellshock（CVE-2014-6271）攻擊指令，分析這段 PoC 的正確性與實際可利用性，順便吐槽戲劇裡的駭客畫面。"
 categories:
     - 看電影學資安
 cover: /images/CyberSec-in-movie-Person-of-Interest-S04E11(IF-THEN-ELSE)/3.webp

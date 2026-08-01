@@ -7,6 +7,7 @@ tags:
     - 密碼安全
     - 加密
     - 明文密碼
+description: "2025 年了還有網站明文儲存密碼！說明明文密碼的危險、撞庫攻擊的風險，教你用忘記密碼功能簡單判斷網站是否正確使用雜湊保護你的密碼。"
 categories:
     - 資訊安全
 cover: /images/Im-proud-that-I-store-my-password-in-plaintext/plainpass.png

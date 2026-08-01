@@ -7,6 +7,7 @@ tags:
     - 看電影學資安
     - drama
     - CSI Cyber
+description: "看電影學資安：從 CSI Cyber 第一季第一集的嬰兒監視器入侵案，學習數位證據保存、法拉第袋的用途，以及為什麼最了解黑帽駭客的就是黑帽駭客。"
 categories:
     - 看電影學資安
 cover: /images/CyberSec-in-movie-CSI-Cyber-S01E01/2.webp

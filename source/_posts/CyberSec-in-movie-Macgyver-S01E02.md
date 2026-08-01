@@ -7,6 +7,7 @@ tags:
     - 看電影學資安
     - drama
     - Macgyver
+description: "看電影學資安：從新版馬蓋先 S01E02 的入侵劇情，介紹無線網路攻擊手法，包括 WEP 弱點、WPA/WPA2 密碼破解、WPS 與 Pixie Dust 攻擊，以及安全架設 AP 的建議。"
 categories:
     - 看電影學資安
 cover: /images/CyberSec-in-movie-Macgyver-S01E02/3.webp

@@ -4,6 +4,7 @@ date: 2024-04-29
 tags: 
     - 閒聊
     - 心情
+description: "告別 Medium 的登入牆與付費牆，改用 Hexo 自建部落格放上 GitHub，記錄開站緣由與安裝參考資源。"
 categories:
     - 生活雜記
 cover: /images/avatar.jpg

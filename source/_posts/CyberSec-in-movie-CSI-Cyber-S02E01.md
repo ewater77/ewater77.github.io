@@ -7,6 +7,7 @@ tags:
     - 看電影學資安
     - drama
     - CSI Cyber
+description: "看電影學資安：CSI Cyber 第二季第一集的 WarDriving 攻擊，智慧娃娃被入侵監聽、掃地機器人與遊戲機成為數位鑑識關鍵，手機洩漏的資訊超乎你的想像。"
 categories:
     - 看電影學資安
 cover: /images/CyberSec-in-movie-CSI-Cyber-S02E01/13.webp

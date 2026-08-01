@@ -7,6 +7,7 @@ tags:
     - 看電影學資安
     - drama
     - The Big Bang Theory
+description: "看電影學資安：從宅男行不行 Leonard 的密碼習慣談密碼安全，為什麼生日不該當密碼、重複使用密碼會招來撞庫攻擊，以及正確的密碼管理方式。"
 categories:
     - 看電影學資安
 cover: /images/CyberSec-in-movie-The-Big-Bang-Theory-S02E09-S09E09/3.webp
