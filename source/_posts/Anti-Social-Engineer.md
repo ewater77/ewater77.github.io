@@ -9,8 +9,10 @@ tags:
 description: "防詐騙實用手冊：解析詐騙集團的社交工程話術，教你看懂網址結構、辨別假網站與釣魚連結，5 分鐘提升防詐能力，別再當詐騙集團的薯條。"
 categories:
     - 資訊安全
-cover: /images/Anti-Social-Engineer/social_engineer.jpeg
+cover: /images/Anti-Social-Engineer/social_engineer.png
 ---
+
+![社交工程示意圖](/images/Anti-Social-Engineer/social_engineer.png)
 
 ## 當詐騙集團比 Netflix 還會拍劇
 
