@@ -1,6 +1,7 @@
 ---
 title: 這才不算是入侵，因為你所有的密碼都一樣 - 宅男行不行 The Big Bang Theory S02E09, S09E09
 date: 2024-05-02 01:26:21
+updated: 2026-08-01 11:03:06
 tags: 
     - security
     - 資訊安全

@@ -1,6 +1,7 @@
 ---
 title: 從菜雞到 OSCP
 date: 2024-04-30 22:35:29
+updated: 2026-08-01 11:03:06
 tags: 
     - security
     - 資訊安全

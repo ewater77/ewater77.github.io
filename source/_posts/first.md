@@ -1,6 +1,7 @@
 ---
 title: 自建 blogger 開張
 date: 2024-04-29
+updated: 2026-08-01 11:03:06
 tags: 
     - 閒聊
     - 心情
