@@ -1,0 +1,4 @@
+/* 停用側欄頭像滑鼠移過時的旋轉效果（主題 aside.styl 寫死，無設定可關） */
+.avatar-img img:hover {
+  transform: none;
+}
