@@ -220,7 +220,7 @@ reward:
     - img: /images/ECPay.png
       link: https://p.ecpay.com.tw/1B2E170
       text: 綠界科技 ECPay
-    - img: /images/BSC_BTC.png
+    - img: /images/BSC_BTC_ETH_USDT.jpg
       link:
       text: BSC Bitcoin
 
