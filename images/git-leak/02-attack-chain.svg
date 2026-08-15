@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 560" font-family="'Segoe UI','PingFang TC','Microsoft JhengHei',system-ui,sans-serif">
+  <defs>
+    <marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="860" height="560" rx="14" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="34" y="44" font-size="22" font-weight="700" fill="#0f172a">一個 .git 外洩，如何連鎖到偽造付款與個資外洩</text>
+
+  <!-- A: exposed .git -->
+  <rect x="315" y="66" width="230" height="48" rx="10" fill="#eff6ff" stroke="#93c5fd"/>
+  <text x="430" y="95" font-size="14" font-weight="700" fill="#1e3a8a" text-anchor="middle" font-family="'Consolas',monospace">公開可存取的 /.git/</text>
+
+  <!-- B: recover source -->
+  <rect x="285" y="146" width="290" height="48" rx="10" fill="#dbeafe" stroke="#60a5fa"/>
+  <text x="430" y="175" font-size="15" font-weight="700" fill="#1e40af" text-anchor="middle">還原完整原始碼與提交歷史</text>
+
+  <line x1="430" y1="114" x2="430" y2="144" stroke="#94a3b8" stroke-width="2" marker-end="url(#a2)"/>
+
+  <!-- three branches -->
+  <g>
+    <rect x="24" y="254" width="256" height="96" rx="10" fill="#fffbeb" stroke="#fcd34d"/>
+    <text x="40" y="282" font-size="13.5" font-weight="700" fill="#92400e">① .git/config 的遠端帳密</text>
+    <text x="40" y="306" font-size="12.5" fill="#78350f">若 remote URL 內嵌了</text>
+    <text x="40" y="325" font-size="12.5" fill="#78350f">帳號密碼或憑證</text>
+
+    <rect x="302" y="254" width="256" height="96" rx="10" fill="#fffbeb" stroke="#fcd34d"/>
+    <text x="318" y="282" font-size="13.5" font-weight="700" fill="#92400e">② 程式碼／設定中的機密</text>
+    <text x="318" y="306" font-size="12.5" fill="#78350f">HashKey、HashIV、MerchantID、</text>
+    <text x="318" y="325" font-size="12.5" fill="#78350f">DB 連線密碼、後台帳密、API key</text>
+
+    <rect x="580" y="254" width="256" height="96" rx="10" fill="#fffbeb" stroke="#fcd34d"/>
+    <text x="596" y="282" font-size="13.5" font-weight="700" fill="#92400e">③ 歷史 commit 中的舊金鑰</text>
+    <text x="596" y="306" font-size="12.5" fill="#78350f">「曾提交、後來才刪」的</text>
+    <text x="596" y="325" font-size="12.5" fill="#78350f">金鑰與密碼仍撈得回</text>
+  </g>
+
+  <!-- B -> branches -->
+  <g stroke="#94a3b8" stroke-width="2" fill="none">
+    <path d="M360,194 C300,220 210,228 152,252" marker-end="url(#a2)"/>
+    <line x1="430" y1="194" x2="430" y2="252" marker-end="url(#a2)"/>
+    <path d="M500,194 C560,220 650,228 708,252" marker-end="url(#a2)"/>
+  </g>
+
+  <!-- branches -> impact -->
+  <g stroke="#94a3b8" stroke-width="2" fill="none">
+    <path d="M152,350 C210,392 300,404 352,428" marker-end="url(#a2)"/>
+    <line x1="430" y1="350" x2="430" y2="426" marker-end="url(#a2)"/>
+    <path d="M708,350 C650,392 560,404 508,428" marker-end="url(#a2)"/>
+  </g>
+
+  <!-- impact -->
+  <rect x="230" y="430" width="400" height="76" rx="12" fill="#b91c1c"/>
+  <text x="430" y="461" font-size="15.5" font-weight="700" fill="#ffffff" text-anchor="middle">偽造付款通知  · 竄改訂單金額</text>
+  <text x="430" y="486" font-size="15.5" font-weight="700" fill="#ffffff" text-anchor="middle">接管資料庫 · 竊取個資</text>
+</svg>
