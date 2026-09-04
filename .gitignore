@@ -11,3 +11,9 @@ _multiconfig.yml
 # 開頭斜線很重要:不加的話會連 source/images/ 底下的圖一起忽略
 /images
 bash.exe.stackdump
+# Dropbox 同步衝突副本(macOS 會加 " 2"、Windows/網頁版會加 "conflicted copy")
+# 都是衍生物,可重建,不進版控也不該留在工作目錄
+*\ [0-9]
+*\ [0-9]/
+*\ [0-9].*
+*conflicted\ copy*
