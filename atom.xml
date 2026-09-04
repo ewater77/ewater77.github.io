@@ -11,7 +11,28 @@
   <rights>All rights reserved 2026, Walter</rights>
   <subtitle>一位喜歡駭客技術、遊戲及追劇的工程師</subtitle>
   <title>Walter's Blog</title>
-  <updated>2026-07-31T05:29:46.000Z</updated>
+  <updated>2026-09-05T14:00:00.000Z</updated>
+  <entry>
+    <author>
+      <name>Walter</name>
+    </author>
+    <category term="看電影學資安" scheme="https://blog.walter.com.tw/categories/%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89/"/>
+    <category term="資訊安全" scheme="https://blog.walter.com.tw/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
+    <category term="security" scheme="https://blog.walter.com.tw/tags/security/"/>
+    <category term="看電影學資安" scheme="https://blog.walter.com.tw/tags/%E7%9C%8B%E9%9B%BB%E5%BD%B1%E5%AD%B8%E8%B3%87%E5%AE%89/"/>
+    <category term="anime" scheme="https://blog.walter.com.tw/tags/anime/"/>
+    <category term="AI 資安" scheme="https://blog.walter.com.tw/tags/AI-%E8%B3%87%E5%AE%89/"/>
+    <category term="生成式 AI" scheme="https://blog.walter.com.tw/tags/%E7%94%9F%E6%88%90%E5%BC%8F-AI/"/>
+    <category term="Prompt Injection" scheme="https://blog.walter.com.tw/tags/Prompt-Injection/"/>
+    <category term="OWASP LLM" scheme="https://blog.walter.com.tw/tags/OWASP-LLM/"/>
+    <category term="葬送的芙莉蓮" scheme="https://blog.walter.com.tw/tags/%E8%91%AC%E9%80%81%E7%9A%84%E8%8A%99%E8%8E%89%E8%93%AE/"/>
+    <id>https://blog.walter.com.tw/2026/09/03/AI-Security-in-Frieren/</id>
+    <link href="https://blog.walter.com.tw/2026/09/03/AI-Security-in-Frieren/"/>
+    <published>2026-09-03T12:00:00.000Z</published>
+    <summary>看電影學資安：AI 會讀網頁、操作工具，也會一本正經地胡說八道。從《葬送的芙莉蓮》的寶箱怪、魔族與幻影鬼，認識提示注入、惡意模型、AI 幻覺、最小權限與資料去識別化。</summary>
+    <title>別讓 AI 變成寶箱怪：從《葬送的芙莉蓮》學會安全使用 AI</title>
+    <updated>2026-09-05T14:00:00.000Z</updated>
+  </entry>
   <entry>
     <author>
       <name>Walter</name>
